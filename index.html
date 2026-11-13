@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhET 化学 HTML5 交互仿真实验室 (全42个化学实验完整复刻版)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Cambridge IGCSE Science Ecosystem Nav -->
+  <script src="https://www.igcse.xyz/ecosystem-nav.js" defer></script>
+</head>
+<body>
+  <!-- Ecosystem Navigation (PhET slot) -->
+  <igcse-nav active="phet" sticky></igcse-nav>
+
+  <header class="top-header">
+    <div class="brand-wrap">
+      <div class="brand-logo">Chem</div>
+      <div class="brand-title">
+        <h1>
+          PhET 化学 HTML5 仿真实验全集
+          <span class="brand-badge">42 Sims 完整交互版</span>
+        </h1>
+        <p>
+          完整复刻自科罗拉多大学博尔德分校
+          <a href="https://phet.colorado.edu/en/simulations/filter?subjects=chemistry&type=html" target="_blank" rel="noopener noreferrer">
+            PhET Interactive Simulations (Chemistry · HTML5)
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="sim-search-input" placeholder="搜索中英文实验名称、公式或原理 (如: pH, VSEPR, 卢瑟福, 能带)..." />
+      </div>
+    </div>
+  </header>
+
+  <section class="filter-bar">
+    <div class="category-tabs">
+      <button class="cat-btn active" data-cat="all">全部化学实验 <span class="cat-count">42</span></button>
+      <button class="cat-btn" data-cat="atomic">原子与核化学 <span class="cat-count">7</span></button>
+      <button class="cat-btn" data-cat="molecules">分子结构与成键 <span class="cat-count">7</span></button>
+      <button class="cat-btn" data-cat="reactions">化学反应与计量 <span class="cat-count">2</span></button>
+      <button class="cat-btn" data-cat="states">物质状态与热力学 <span class="cat-count">7</span></button>
+      <button class="cat-btn" data-cat="solutions">溶液、酸碱与光度 <span class="cat-count">7</span></button>
+      <button class="cat-btn" data-cat="electro-wave">静电与波动基础 <span class="cat-count">4</span></button>
+      <button class="cat-btn" data-cat="quantum">量子化学与固体能带 <span class="cat-count">8</span></button>
+    </div>
+    <div id="visible-sim-count" style="font-size: 0.85rem; color: var(--text-muted);">
+      显示 42 / 42 个化学仿真实验
+    </div>
+  </section>
+
+  <main class="catalog-container">
+    <div id="sim-grid" class="sim-grid"></div>
+  </main>
+
+  <div id="workspace-overlay" class="workspace-overlay">
+    <div class="ws-header">
+      <div class="ws-title-group">
+        <button id="ws-back-btn" class="ws-back-btn">← 返回实验大厅 (42)</button>
+        <div class="ws-sim-titles">
+          <h2 id="ws-title-zh">实验标题</h2>
+          <p id="ws-title-en">English Subtitle</p>
+        </div>
+      </div>
+      <div id="ws-mode-tabs" class="ws-mode-tabs"></div>
+      <div class="ws-nav-actions">
+        <button id="ws-prev-btn" class="ws-nav-btn">◀ 上一个实验</button>
+        <button id="ws-next-btn" class="ws-nav-btn">下一个实验 ▶</button>
+        <a id="ws-phet-link" class="ws-nav-btn" href="https://phet.colorado.edu/en/simulations/filter?subjects=chemistry&type=html" target="_blank" rel="noopener noreferrer">
+          PhET 原版主页 ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="ws-body">
+      <div class="ws-stage-col">
+        <div class="canvas-wrapper">
+          <canvas id="sim-canvas" width="900" height="540"></canvas>
+        </div>
+        <div class="ws-bottom-bar">
+          <div class="transport-controls">
+            <button id="btn-play-pause" class="ctrl-action-btn primary">⏸ 暂停</button>
+            <button id="btn-step" class="ctrl-action-btn">⏭ 单步帧</button>
+            <button id="btn-reset" class="ctrl-action-btn">↺ 重置实验</button>
+          </div>
+          <div id="sim-readouts-strip" class="readouts-strip"></div>
+        </div>
+      </div>
+
+      <aside class="ws-side-panel">
+        <div class="panel-section">
+          <div class="panel-section-title">
+            <span>实验参数控制面板</span>
+            <span>Interactive Controls</span>
+          </div>
+          <div id="sim-controls-container"></div>
+        </div>
+
+        <div class="panel-section">
+          <div class="panel-section-title">
+            <span>核心物理化学方程与原理</span>
+          </div>
+          <div id="ws-formula-box" class="formula-card"></div>
+          <p id="ws-summary-box" class="pedagogy-notes"></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="js/catalog.js"></script>
+  <script src="js/sims_atomic.js"></script>
+  <script src="js/sims_molecules.js"></script>
+  <script src="js/sims_reactions_states1.js"></script>
+  <script src="js/sims_states2_solutions1.js"></script>
+  <script src="js/sims_solutions2_electrowave.js"></script>
+  <script src="js/sims_quantum.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>

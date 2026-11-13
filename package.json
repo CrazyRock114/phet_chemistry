@@ -1,0 +1,20 @@
+{
+  "name": "phet-chemistry",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PhET Chemistry HTML5 Interactive Simulations (Complete 42 Classic Labs)",
+  "scripts": {
+    "test": "node test/phet_assertions.test.mjs",
+    "check": "find . -name '*.js' -not -path './node_modules/*' -print0 | xargs -0 -n1 node --check"
+  },
+  "keywords": [
+    "phet",
+    "chemistry",
+    "simulations",
+    "vsepr",
+    "acid-base",
+    "igcse"
+  ],
+  "author": "CrazyRock",
+  "license": "MIT"
+}
