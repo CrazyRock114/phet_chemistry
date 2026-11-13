@@ -100,3 +100,25 @@ test('PhET Chemistry - Ecosystem Nav Integration in index.html & all-in-one HTML
     'phet_chemistry_all_42_sims.html must mount <igcse-nav active="phet" sticky>'
   );
 });
+
+test('PhET Chemistry - DEFECT-PHET-NAV-ZINDEX-COLLISION Vaccine Assertion', () => {
+  const stylesCss = fs.readFileSync(path.join(rootDir, 'styles.css'), 'utf8');
+  const allSimsHtml = fs.readFileSync(path.join(rootDir, 'phet_chemistry_all_42_sims.html'), 'utf8');
+
+  // Verify .workspace-overlay z-index is >= 100000 in both files to avoid collision with <igcse-nav> (z-index: 99990)
+  const zIndexRegex = /\.workspace-overlay\s*\{[^}]*?z-index:\s*(\d+)/s;
+  
+  const stylesMatch = stylesCss.match(zIndexRegex);
+  assert.ok(stylesMatch, 'styles.css must declare z-index on .workspace-overlay');
+  assert.ok(
+    parseInt(stylesMatch[1], 10) >= 100000,
+    `styles.css .workspace-overlay z-index must be >= 100000 (found ${stylesMatch[1]})`
+  );
+
+  const htmlMatch = allSimsHtml.match(zIndexRegex);
+  assert.ok(htmlMatch, 'phet_chemistry_all_42_sims.html must declare z-index on .workspace-overlay');
+  assert.ok(
+    parseInt(htmlMatch[1], 10) >= 100000,
+    `phet_chemistry_all_42_sims.html .workspace-overlay z-index must be >= 100000 (found ${htmlMatch[1]})`
+  );
+});
