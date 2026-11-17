@@ -1097,9 +1097,11 @@ select.sim-select {
 }
 
 .canvas-wrapper {
-  background: #101820;
+  background: #090d18;
   border-color: var(--border-color);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.65);
 }
+
 
 button,
 input,
