@@ -30,11 +30,28 @@
     </div>
     <div class="header-controls">
       <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="sim-search-input" placeholder="搜索中英文实验名称、公式或原理 (如: pH, VSEPR, 卢瑟福, 能带)..." />
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input type="search" id="sim-search-input" aria-label="搜索化学实验" placeholder="搜索实验、公式或原理…" />
+      </div>
+      <div class="theme-switcher" role="group" aria-label="选择界面风格">
+        <button type="button" class="theme-btn active" data-theme-choice="lab" aria-pressed="true">实验室</button>
+        <button type="button" class="theme-btn" data-theme-choice="paper" aria-pressed="false">纸笔</button>
+        <button type="button" class="theme-btn" data-theme-choice="observatory" aria-pressed="false">观测台</button>
       </div>
     </div>
   </header>
+
+  <section class="welcome-band" aria-labelledby="welcome-title">
+    <div class="welcome-copy">
+      <span class="eyebrow">PHET CHEMISTRY · INTERACTIVE LAB</span>
+      <h2 id="welcome-title">把好奇心，变成一次实验。</h2>
+      <p>从原子结构到量子能带，动手探索化学背后的规律。</p>
+    </div>
+    <div class="welcome-stat" aria-label="42 个交互式实验">
+      <strong>42</strong>
+      <span>个交互实验</span>
+    </div>
+  </section>
 
   <section class="filter-bar">
     <div class="category-tabs">
