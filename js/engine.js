@@ -427,7 +427,37 @@
 
   const gridEl = document.getElementById('sim-grid');
   const searchInput = document.getElementById('sim-search-input');
+  const themeButtons = Array.from(document.querySelectorAll('[data-theme-choice]'));
+  const availableThemes = ['lab', 'paper', 'observatory'];
   let activeCategory = 'all';
+
+  function setTheme(theme, persist = true) {
+    const selectedTheme = availableThemes.includes(theme) ? theme : 'lab';
+    document.documentElement.dataset.theme = selectedTheme;
+    themeButtons.forEach(button => {
+      const isActive = button.dataset.themeChoice === selectedTheme;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+    if (persist) {
+      try {
+        localStorage.setItem('phet-chemistry-theme', selectedTheme);
+      } catch (error) {
+        // Keep the selected theme active for this session when storage is unavailable.
+      }
+    }
+  }
+
+  let savedTheme = 'lab';
+  try {
+    savedTheme = localStorage.getItem('phet-chemistry-theme') || 'lab';
+  } catch (error) {
+    // Use the default theme when storage is unavailable.
+  }
+  setTheme(savedTheme, false);
+  themeButtons.forEach(button => {
+    button.addEventListener('click', () => setTheme(button.dataset.themeChoice));
+  });
 
   function renderCatalog() {
     const q = (searchInput.value || '').trim().toLowerCase();
@@ -444,7 +474,7 @@
     document.getElementById('visible-sim-count').textContent = `显示 ${filtered.length} / ${window.PHET_CATALOG.length} 个化学仿真实验`;
 
     gridEl.innerHTML = filtered.map(item => `
-      <article class="sim-card" data-sim-id="${item.id}" onclick="window.openSimulation('${item.id}')">
+      <article class="sim-card" data-sim-id="${item.id}" tabindex="0" role="button" aria-label="打开实验：${item.nameZh}，${item.nameEn}" onclick="window.openSimulation('${item.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.openSimulation('${item.id}')}">
         <div>
           <div class="sim-card-top">
             <span class="sim-num">#${String(item.num).padStart(2, '0')}</span>
