@@ -59,14 +59,14 @@
 
     if (title) {
       ctx.fillStyle = '#f8fafc';
-      ctx.font = 'bold 14px "Inter", "PingFang SC", "Microsoft YaHei", sans-serif';
+      ctx.font = 'bold 14px "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
       ctx.fillText(title, x + 14, y + 10);
     }
     if (subtitle) {
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '11.5px "Inter", "PingFang SC", "Microsoft YaHei", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'right';
       ctx.textBaseline = 'top';
       ctx.fillText(subtitle, x + w - 14, y + 12);
@@ -76,7 +76,7 @@
 
   function drawBadge(ctx, x, y, text, bgColor, textColor) {
     ctx.save();
-    ctx.font = 'bold 11px "Inter", "PingFang SC", sans-serif';
+    ctx.font = 'bold 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     const padX = 8;
     const tw = ctx.measureText(text).width + padX * 2;
     roundRect(ctx, x, y, tw, 20, 5);
@@ -121,7 +121,7 @@
           ctx.strokeStyle = active ? '#ffffff' : accent;
           ctx.stroke();
           ctx.fillStyle = active ? '#0f172a' : '#f1f5f9';
-          ctx.font = (b.opts.fontSize || 12) + 'px "Inter", "PingFang SC", sans-serif';
+          ctx.font = (b.opts.fontSize || 12) + 'px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(b.label, b.x + b.w / 2, b.y + b.h / 2);
@@ -130,7 +130,7 @@
         for (const s of this.sliders) {
           const ratio = clamp((s.value - s.min) / (s.max - s.min || 1), 0, 1);
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+          ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.textBaseline = 'bottom';
           ctx.fillText(s.label, s.x, s.y - 4);
@@ -586,7 +586,7 @@
         ctx.strokeStyle = '#f59e0b';
         ctx.stroke();
         ctx.fillStyle = '#fbbf24';
-        ctx.font = 'bold 10px sans-serif';
+        ctx.font = 'bold 10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('探测', barrierX + 14, detY - 14);
       }
@@ -602,7 +602,7 @@
       ctx.lineWidth = 2;
       ctx.stroke();
       ctx.fillStyle = '#f8fafc';
-      ctx.font = 'bold 10px sans-serif';
+      ctx.font = 'bold 10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('粒子源', wx + 28, cy + 4);
       ctx.restore();
@@ -661,7 +661,7 @@
 
       // Labels on screen panel
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('理论曲线 & 统计', curveBaseX + curveMaxW / 2, screenTopY + screenH + 18);
       ctx.fillText('累积亮点', screenStripX + screenStripW / 2, screenTopY + screenH + 18);
@@ -674,7 +674,7 @@
       // Bottom Physics Formula Bar
       drawPanel(ctx, 14, 472, 872, 58, '', '');
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(
         state.whichWay === 'none'
@@ -683,7 +683,7 @@
         28, 494
       );
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         `当前粒子：${spec.name}   |   双缝间距 d = ${state.slitSep.toFixed(1)} μm   |   单缝宽 a = ${state.slitWidth.toFixed(2)} μm   |   路径探测：${state.whichWay === 'none' ? '关闭（有干涉条纹）' : '开启（干涉条纹消失）'}`,
         28, 515
@@ -910,7 +910,7 @@
 
       // Pole labels
       ctx.fillStyle = '#38bdf8';
-      ctx.font = 'bold 12px sans-serif';
+      ctx.font = 'bold 12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('|↑⟩ 正面 (Heads)', cx, cy - r - 12);
       ctx.fillStyle = '#f43f5e';
@@ -922,11 +922,11 @@
       ctx.fillStyle = 'rgba(30, 41, 59, 0.85)';
       ctx.fill();
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText('最近一次测量坍缩结果：', 46, 340);
       ctx.fillStyle = state.lastOutcome === 'up' ? '#38bdf8' : '#f43f5e';
-      ctx.font = 'bold 16px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 16px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         state.lastOutcome === 'up' ? '↑ 自旋向上 |↑⟩ (正面 Heads)' : '↓ 自旋向下 |↓⟩ (反面 Tails)',
         46, 365
@@ -934,7 +934,7 @@
 
       // Recent outcome beads
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '11px sans-serif';
+      ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText('最近测量序列：', 32, 398);
       state.history.forEach((h, idx) => {
         const bx = 36 + (idx % 14) * 19;
@@ -966,7 +966,7 @@
         ctx.lineTo(chartX + chartW, gy);
         ctx.stroke();
         ctx.fillStyle = '#94a3b8';
-        ctx.font = '10.5px sans-serif';
+        ctx.font = '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'right';
         ctx.fillText((p * 100).toFixed(0) + '%', chartX - 6, gy + 3);
       }
@@ -998,13 +998,13 @@
 
       // Labels below bars
       ctx.fillStyle = '#f8fafc';
-      ctx.font = 'bold 11.5px sans-serif';
+      ctx.font = 'bold 11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('正面 / 自旋向上 |↑⟩', chartX + 59, chartY + chartH + 20);
       ctx.fillText('反面 / 自旋向下 |↓⟩', chartX + 181, chartY + chartH + 20);
 
       // Numeric labels above bars
-      ctx.font = '10.5px sans-serif';
+      ctx.font = '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#93c5fd';
       ctx.fillText(`理论 ${(state.probUp * 100).toFixed(0)}%`, chartX + 38, chartY + chartH - thUpH - 6);
       ctx.fillStyle = '#38bdf8';
@@ -1020,7 +1020,7 @@
       ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
       ctx.fill();
       ctx.fillStyle = '#cbd5e1';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(`量子硬币统计：↑ ${state.quantumCounts.up} 次 (${(expUpFreq * 100).toFixed(1)}%)  |  ↓ ${state.quantumCounts.down} 次 (${(expDownFreq * 100).toFixed(1)}%)`, 364, 408);
       ctx.fillStyle = '#fbbf24';
@@ -1034,14 +1034,14 @@
       // Bottom Formula Bar
       drawPanel(ctx, 14, 467, 872, 62, '', '');
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(
         `量子比特态：|ψ⟩ = cos(θ/2)|↑⟩ + e^(iφ)sin(θ/2)|↓⟩ = ${alpha.toFixed(3)}|↑⟩ + e^(i${state.phaseDeg}°)${beta.toFixed(3)}|↓⟩`,
         28, 490
       );
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         `玻恩定则 (Born Rule)：P(↑) = |⟨↑|ψ⟩|² = |α|² = ${(state.probUp * 100).toFixed(1)}% ，P(↓) = |⟨↓|ψ⟩|² = |β|² = ${((1 - state.probUp) * 100).toFixed(1)}% （大数定律下实验频率收敛于理论概率）`,
         28, 512
@@ -1291,7 +1291,7 @@
       ctx.stroke();
 
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '10.5px sans-serif';
+      ctx.font = '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('|+Z⟩', cx, cy - r - 12);
       ctx.fillText('|-Z⟩', cx, cy + r + 18);
@@ -1348,7 +1348,7 @@
       const cHalf = Math.cos((state.initTheta * Math.PI) / 360);
       const sHalf = Math.sin((state.initTheta * Math.PI) / 360);
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(`入射初态：`, 28, 305);
       ctx.fillStyle = '#38bdf8';
@@ -1359,7 +1359,7 @@
       ctx.fillText(`SG₃ 轴角 α₃ = ${state.sgAngles[2]}°`, 28, 392);
       ctx.fillStyle = '#fbbf24';
       ctx.fillText(`第3级 |+⟩ 净透射率：`, 28, 418);
-      ctx.font = 'bold 13px sans-serif';
+      ctx.font = 'bold 13px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(`${(probs.p1Plus * probs.p2PlusGiven1 * probs.p3PlusGiven2 * 100).toFixed(1)}%`, 28, 438);
 
       // Center Panel: 3-Stage Stern-Gerlach Apparatus
@@ -1387,7 +1387,7 @@
         ctx.stroke();
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 11.5px sans-serif';
+        ctx.font = 'bold 11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`SG${idx + 1} (${axisName})`, sx + 34, baseY - 72);
         ctx.fillStyle = '#fca5a5';
@@ -1401,7 +1401,7 @@
         if (idx === 2) pPlus = probs.p3PlusGiven2;
 
         ctx.fillStyle = '#34d399';
-        ctx.font = 'bold 11px sans-serif';
+        ctx.font = 'bold 11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(`|+⟩ ${(pPlus * 100).toFixed(0)}%`, sx + 94, baseY - 28);
 
         ctx.fillStyle = '#f43f5e';
@@ -1411,7 +1411,7 @@
         if (idx < 2 && state.blockedMinus[idx]) {
           ctx.fillStyle = '#f59e0b';
           ctx.fillRect(sx + 78, baseY + 12, 8, 28);
-          ctx.font = '10px sans-serif';
+          ctx.font = '10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText('阻挡器', sx + 82, baseY + 52);
         }
 
@@ -1425,11 +1425,11 @@
         ctx.stroke();
 
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = 'bold 11px sans-serif';
+        ctx.font = 'bold 11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(`第 ${idx + 1} 级测量统计`, sx - 4, 373);
         ctx.fillStyle = '#34d399';
-        ctx.font = '11px sans-serif';
+        ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(`|+⟩: ${st.plus} (${((st.plus / tot) * 100).toFixed(0)}%)`, sx - 4, 394);
         ctx.fillStyle = '#f43f5e';
         ctx.fillText(`|−⟩: ${st.minus} (${((st.minus / tot) * 100).toFixed(0)}%)`, sx - 4, 414);
@@ -1489,14 +1489,14 @@
       // Bottom Physics Bar
       drawPanel(ctx, 14, 467, 872, 62, '', '');
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(
         `非对易算符 [σ_z, σ_x] = 2iσ_y ≠ 0：在 SG₁(Z) 阻挡 |-Z⟩ 后，若中间插入 SG₂(X) 测量，粒子坍缩至 |+X⟩ = (|+Z⟩ + |-Z⟩)/√2，使 SG₃(Z) 重新出现 50% |-Z⟩ 分量！`,
         28, 490
       );
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         `当前三级透射率：SG₁ P(+) = ${(probs.p1Plus * 100).toFixed(1)}%  →  SG₂ P(+|1) = ${(probs.p2PlusGiven1 * 100).toFixed(1)}%  →  SG₃ P(+|2) = ${(probs.p3PlusGiven2 * 100).toFixed(1)}%`,
         28, 512
@@ -1656,7 +1656,7 @@
         ctx.stroke();
 
         ctx.fillStyle = isSel ? '#38bdf8' : '#94a3b8';
-        ctx.font = (isSel ? 'bold ' : '') + '10.5px sans-serif';
+        ctx.font = (isSel ? 'bold ' : '') + '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'right';
         ctx.fillText(`n=${i}`, wellLeft - 5, ly + 3);
         ctx.textAlign = 'left';
@@ -1664,7 +1664,7 @@
       }
 
       ctx.fillStyle = '#cbd5e1';
-      ctx.font = '11px sans-serif';
+      ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(`V(x) = ∞ (x≤0, x≥L)`, (wellLeft + wellRight) / 2, wellBot + 22);
 
@@ -1776,7 +1776,7 @@
 
       // Turning point markers at x=0 and x=L
       ctx.fillStyle = '#f8fafc';
-      ctx.font = '11px sans-serif';
+      ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('x = 0 (转折点)', x0, probBaseY + 18);
       ctx.fillText(`x = ${state.L.toFixed(2)} nm (转折点)`, x1, probBaseY + 18);
@@ -1796,14 +1796,14 @@
       drawPanel(ctx, 14, 467, 872, 62, '', '');
       const deBroglieLam = (2 * state.L) / state.n;
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(
         `精确解析公式：Eₙ = n²h² / (8mL²) = ${En.toFixed(4)} eV   |   定态波函数：ψₙ(x,t) = √(2/L) sin(nπx/L) e^(-iEₙt/ℏ)`,
         28, 490
       );
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         `驻波条件：L = n(λ/2) ⇒ 德布罗意波长 λ_${state.n} = 2L/n = ${deBroglieLam.toFixed(3)} nm   |   零点能 E₁ = ${E1.toFixed(4)} eV   |   内部节点数 = ${state.n - 1}`,
         28, 512
@@ -2049,7 +2049,7 @@
         ctx.stroke();
 
         ctx.fillStyle = isSel ? '#38bdf8' : '#94a3b8';
-        ctx.font = (isSel ? 'bold ' : '') + '10.5px sans-serif';
+        ctx.font = (isSel ? 'bold ' : '') + '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(`${lv.label}: ${lv.E.toFixed(2)}eV`, pLeft + 22, ly - 5);
       });
@@ -2059,7 +2059,7 @@
       ctx.fillStyle = 'rgba(244, 63, 94, 0.22)';
       ctx.fillRect(pMidX - 45, zpeY, 90, pBot - zpeY);
       ctx.fillStyle = '#fda4af';
-      ctx.font = 'bold 10px sans-serif';
+      ctx.font = 'bold 10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(`零点能 E₀ = ${zpe.toFixed(2)} eV > 0`, pMidX, pBot + 18);
       ctx.restore();
@@ -2094,7 +2094,7 @@
       ctx.setLineDash([]);
 
       ctx.fillStyle = '#fda4af';
-      ctx.font = '10.5px sans-serif';
+      ctx.font = '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('禁戒区 V>E', (wLeft + wMidX - halfWellPx) / 2, 112);
       ctx.fillText('禁戒区 V>E', (wRight + wMidX + halfWellPx) / 2, 112);
@@ -2143,7 +2143,7 @@
       ctx.stroke();
 
       ctx.fillStyle = '#fbbf24';
-      ctx.font = '11px sans-serif';
+      ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('← 指数衰减量子隧穿尾巴 ψ(x) ∝ e^(-κ|x|) →', wMidX, 438);
       ctx.restore();
@@ -2155,7 +2155,7 @@
       // Bottom Formula Bar
       drawPanel(ctx, 14, 467, 872, 62, '', '');
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       if (state.potentialType === 'finite-well') {
         ctx.fillText(
@@ -2174,7 +2174,7 @@
         );
       }
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         `当前势阱深度 V₀ = ${state.V0.toFixed(1)} eV  |  特征宽度 L = ${state.widthL.toFixed(2)} nm  |  海森堡不确定性 Δx·Δp ≥ ℏ/2 决定了零点能 E₀ > 0`,
         28, 512
@@ -2453,13 +2453,13 @@
       ctx.stroke();
 
       ctx.fillStyle = '#fbbf24';
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(`位置期望值质心 ⟨x(t)⟩ = ${(expU * 1.0).toFixed(3)} L`, expPx, probBaseY + 46);
 
       ctx.textAlign = 'left';
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px sans-serif';
+      ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText('Re[Ψ(x,t)] (蓝) / Im[Ψ(x,t)] (红)', x0 + 8, 108);
       ctx.fillStyle = '#34d399';
       ctx.fillText('非定态概率密度包络 |Ψ(x,t)|² = |c₁|²|ψ₁|² + |c₂|²|ψ₂|² + 2|c₁c₂|ψ₁ψ₂cos(ω₁₂t)', x0 + 8, 232);
@@ -2472,14 +2472,14 @@
       drawPanel(ctx, 14, 467, 872, 62, '', '');
       const parityDiff = Math.abs(state.n1 - state.n2) % 2 === 1;
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(
         `含时叠加原理：|Ψ(x,t)|² 含交叉干涉项 2c₁c₂ψ₁(x)ψ₂(x)cos((E₂-E₁)t/ℏ)，以玻尔拍频 ω₁₂ = (E₂-E₁)/ℏ 驱动波包振荡`,
         28, 490
       );
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         parityDiff
           ? `当前组合 (n₁=${state.n1}, n₂=${state.n2}) 宇称相反 ⇒ 偶极跃迁矩阵元 ⟨ψ₁|x|ψ₂⟩ ≠ 0，质心 ⟨x(t)⟩ 以频率 ω₁₂ 左右简谐往复运动！`
@@ -2741,7 +2741,7 @@
       ctx.stroke();
 
       ctx.fillStyle = '#cbd5e1';
-      ctx.font = '11px sans-serif';
+      ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText('布洛赫波函数 ψₖ(x) = uₖ(x)e^(ikx) （黄虚线为包络）', pLeft, 102);
       ctx.fillText('Kronig-Penney 周期势阱 V(x+a) = V(x)', pLeft, 242);
@@ -2799,7 +2799,7 @@
 
         // N column label
         ctx.fillStyle = isCurrentN ? '#38bdf8' : '#94a3b8';
-        ctx.font = (isCurrentN ? 'bold ' : '') + '10.5px sans-serif';
+        ctx.font = (isCurrentN ? 'bold ' : '') + '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`N=${nVal}`, cx, eBot + 15);
       });
@@ -2822,7 +2822,7 @@
         ctx.setLineDash([]);
 
         ctx.fillStyle = '#fbbf24';
-        ctx.font = 'bold 10.5px sans-serif';
+        ctx.font = 'bold 10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'right';
         ctx.fillText(`禁带 Eg = ${currentBands.Eg.toFixed(2)} eV (E_F)`, eRight - 4, fermiY - 4);
       }
@@ -2830,7 +2830,7 @@
       // Labels for Conduction and Valence bands
       ctx.textAlign = 'left';
       ctx.fillStyle = '#c084fc';
-      ctx.font = 'bold 11px sans-serif';
+      ctx.font = 'bold 11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText('导带 (Conduction Band)', eLeft + 4, eTop + 14);
       ctx.fillStyle = '#38bdf8';
       ctx.fillText('价带 (Valence Band, 电子填满)', eLeft + 4, eBot - 10);
@@ -2843,14 +2843,14 @@
       // Bottom Physics Bar
       drawPanel(ctx, 14, 467, 872, 62, '', '');
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(
         `布洛赫定理 (Bloch's Theorem)：ψₖ(x) = uₖ(x)e^(ikx)  |  紧束缚色散：E(k) = E₀ - 2t cos(ka)，N 个耦合原子将每条原子能级分裂为 N 条子能级`,
         28, 490
       );
       ctx.fillStyle = '#38bdf8';
-      ctx.font = '11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       const matDesc = state.materialType === 'metal'
         ? '金属导体：导带半满或价带与导带交叠，电子在外加电场下可直接跃迁导电'
         : state.materialType === 'semiconductor'

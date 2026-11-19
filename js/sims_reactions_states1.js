@@ -158,7 +158,7 @@
     ctx.stroke();
     if (title) {
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = 'bold 13px system-ui, -apple-system, sans-serif';
+      ctx.font = 'bold 13px system-ui, -apple-system, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
       ctx.fillText(title, x + 12, y + 9);
@@ -187,7 +187,7 @@
     ctx.stroke();
     if (label) {
       ctx.fillStyle = color === '#f8fafc' || color === '#fde047' ? '#0f172a' : '#ffffff';
-      ctx.font = `bold ${Math.max(8, Math.round(r * 0.85))}px system-ui, sans-serif`;
+      ctx.font = `bold ${Math.max(8, Math.round(r * 0.85))}px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(label, x, y + 0.5);
@@ -433,7 +433,7 @@
     ctx.stroke();
 
     ctx.fillStyle = active ? '#ffffff' : btn.color || '#f1f5f9';
-    ctx.font = btn.font || 'bold 12px system-ui, sans-serif';
+    ctx.font = btn.font || 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(btn.label, btn.x + btn.w / 2, btn.y + btn.h / 2 + 0.5);
@@ -494,7 +494,7 @@
     }
 
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 11px system-ui, sans-serif';
+    ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(
       heatLevel > 0.05 ? '🔥 加热中' : heatLevel < -0.05 ? '❄️ 冷却中' : '加热 / 冷却器',
@@ -539,7 +539,7 @@
       ? `${Math.round(tempK - 273.15)} °C`
       : `${Math.round(tempK)} K`;
     ctx.fillStyle = '#f8fafc';
-    ctx.font = 'bold 11px system-ui, sans-serif';
+    ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(valStr, x + 10, y - 9);
     ctx.restore();
@@ -596,13 +596,13 @@
     ctx.fillStyle = '#0f172a';
     ctx.fill();
     ctx.fillStyle = '#38bdf8';
-    ctx.font = 'bold 10px monospace';
+    ctx.font = 'bold 10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(dispVal, cx, cy + r * 0.28 + 8);
 
     ctx.fillStyle = '#334155';
-    ctx.font = 'bold 9px system-ui, sans-serif';
+    ctx.font = 'bold 9px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.fillText('PRESSURE', cx, cy - r * 0.35);
     ctx.restore();
   }
@@ -987,7 +987,7 @@
           ctx.restore();
 
           ctx.fillStyle = equal ? '#4ade80' : '#cbd5e1';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(
             `${item.el}: 左 ${item.left} ${equal ? '=' : '≠'} 右 ${item.right}`,
@@ -1031,13 +1031,13 @@
           ctx.strokeRect(gx + 3, baseY - hR, 17, hR);
 
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(String(item.left), gx - 11.5, baseY - hL - 6);
           ctx.fillText(String(item.right), gx + 11.5, baseY - hR - 6);
 
           ctx.fillStyle = equal ? '#4ade80' : '#f87171';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(equal ? '=' : '≠', gx, baseY + 14);
           ctx.fillStyle = '#cbd5e1';
           ctx.fillText(item.el, gx, baseY - maxBarH - 12);
@@ -1049,7 +1049,7 @@
         ctx.fillStyle = 'rgba(16, 185, 129, 0.95)';
         ctx.fill();
         ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 14px system-ui, sans-serif';
+        ctx.font = 'bold 14px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('😊 方程式已完美配平！原子守恒！', 450, 88);
@@ -1060,7 +1060,7 @@
 
       ctx.save();
       ctx.fillStyle = state.isBalanced ? '#34d399' : '#64748b';
-      ctx.font = 'bold 26px system-ui, sans-serif';
+      ctx.font = 'bold 26px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText('➔', 450, 342);
@@ -1091,7 +1091,7 @@
 
           if (count === 0) {
             ctx.fillStyle = '#475569';
-            ctx.font = '12px system-ui, sans-serif';
+            ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(`0 × ${sp.label}`, startX + colW / 2, 350);
           }
@@ -1152,13 +1152,13 @@
         ctx.stroke();
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 18px system-ui, sans-serif';
+        ctx.font = 'bold 18px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(String(val), cx - 22, cy);
 
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = 'bold 20px system-ui, sans-serif';
+        ctx.font = 'bold 20px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(term.label, cx + 26, cy + 1);
 
@@ -1166,7 +1166,7 @@
           const nextTerm = allTerms[tIdx + 1];
           const opX = cx + termSpacing / 2 + 12;
           ctx.fillStyle = '#94a3b8';
-          ctx.font = 'bold 22px system-ui, sans-serif';
+          ctx.font = 'bold 22px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(term.side !== nextTerm.side ? '⟶' : '+', opX, cy);
         }
@@ -1407,7 +1407,7 @@
       const eqStrLeft = sc.reactants.map((r) => `${r.coeff} ${r.label}`).join('  +  ');
       const eqStrRight = sc.products.map((p) => `${p.coeff} ${p.label}`).join('  +  ');
       ctx.fillStyle = '#38bdf8';
-      ctx.font = 'bold 17px system-ui, sans-serif';
+      ctx.font = 'bold 17px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(`化学计量式：  ${eqStrLeft}   ⟶   ${eqStrRight}`, 450, 88);
 
@@ -1419,14 +1419,14 @@
         limText = '当前反应物不足以完成 1 个计量批次 (ξ = 0)，全部作为剩余物保留';
       }
       ctx.fillStyle = state.extent > 0 ? '#4ade80' : '#fbbf24';
-      ctx.font = '12px system-ui, sans-serif';
+      ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(limText, 450, 110);
 
       drawPanel(ctx, 14, 130, 412, 296, '反应前：初始反应物 (Reactants)', '#0f172a', '#3b82f6');
       drawPanel(ctx, 474, 130, 412, 296, '反应后：生成物 (Products) 与 剩余物 (Leftovers)', '#0f172a', '#10b981');
 
       ctx.fillStyle = '#38bdf8';
-      ctx.font = 'bold 28px system-ui, sans-serif';
+      ctx.font = 'bold 28px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('⟶', 450, 275);
 
@@ -1442,7 +1442,7 @@
           ctx.stroke();
         }
         ctx.fillStyle = '#93c5fd';
-        ctx.font = 'bold 12px system-ui, sans-serif';
+        ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`${r.label} (×${count})`, x0 + rColW / 2, 174);
 
@@ -1464,11 +1464,11 @@
         ctx.stroke();
 
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 38px system-ui, sans-serif';
+        ctx.font = 'bold 38px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('❓', 680, 245);
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = 'bold 14px system-ui, sans-serif';
+        ctx.font = 'bold 14px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('根据左侧反应物数量，心算生成多少产物、剩余多少反应物！', 680, 290);
 
         const revealBtn = {
@@ -1486,7 +1486,7 @@
         drawButton(ctx, revealBtn, false);
       } else {
         ctx.fillStyle = '#4ade80';
-        ctx.font = 'bold 12px system-ui, sans-serif';
+        ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('生成物 (Products)', 580, 174);
 
@@ -1502,7 +1502,7 @@
             drawMoleculeIcon(ctx, p.formula, mx, my, 0.92, 0);
           }
           ctx.fillStyle = '#86efac';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`${p.label}: ${count}`, x0 + pColW / 2, 410);
         });
 
@@ -1515,7 +1515,7 @@
         ctx.setLineDash([]);
 
         ctx.fillStyle = '#fbbf24';
-        ctx.font = 'bold 12px system-ui, sans-serif';
+        ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('过量剩余物 (Leftovers)', 782, 174);
 
@@ -1531,7 +1531,7 @@
             drawMoleculeIcon(ctx, r.formula, mx, my, 0.9, 0);
           }
           ctx.fillStyle = '#fde68a';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`${r.label}: ${count}`, x0 + lColW / 2, 410);
         });
       }
@@ -1575,18 +1575,18 @@
         ctx.stroke();
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(String(val), cx, cy);
 
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = 'bold 12px system-ui, sans-serif';
+        ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(r.label, cx, cy + 26);
       });
 
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = 'bold 13px system-ui, sans-serif';
+      ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       const prodSummary = sc.products
         .map((p, i) => `${p.label} × ${state.gameMode && !state.revealed ? '?' : state.productCounts[i]}`)
@@ -2167,7 +2167,7 @@
       });
 
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '12px system-ui, sans-serif';
+      ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(
         `预设温度：固态 ${sub.solidT} K  |  液态 ${sub.liquidT} K  |  气态 ${sub.gasT} K`,
@@ -2177,7 +2177,7 @@
 
       drawPanel(ctx, 564, 350, 316, 172, '微观结构与反常膨胀特性解析', '#1e293b', '#334155');
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = '12px system-ui, sans-serif';
+      ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       const lines =
         state.substance === 'water'
@@ -2375,7 +2375,7 @@
       ctx.strokeRect(box.left + 2, pY - 12, box.right - box.left - 4, 16);
 
       ctx.fillStyle = '#0f172a';
-      ctx.font = 'bold 10px system-ui, sans-serif';
+      ctx.font = 'bold 10px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('⇅ 拖拽活塞改变体积 V', (box.left + box.right) / 2, pY - 3);
 
@@ -2491,7 +2491,7 @@
       const slTopX = state.substance === 'water' ? tpX - 24 : tpX + 22;
       const slTopY = pdY + 8;
 
-      ctx.font = 'bold 12px system-ui, sans-serif';
+      ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = 'rgba(56,189,248,0.75)';
       ctx.fillText('固态 (Solid)', pdX + 18, pdY + 60);
       ctx.fillStyle = 'rgba(52,211,153,0.75)';
@@ -2522,7 +2522,7 @@
       ctx.beginPath();
       ctx.arc(tpX, tpY, 4.5, 0, Math.PI * 2);
       ctx.fill();
-      ctx.font = '10px system-ui, sans-serif';
+      ctx.font = '10px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText('三相点 (Triple)', tpX - 30, tpY + 15);
 
       ctx.fillStyle = '#f97316';
@@ -2549,7 +2549,7 @@
       ctx.lineWidth = 1.5;
       ctx.strokeRect(pdX, pdY, pdW, pdH);
       ctx.fillStyle = '#cbd5e1';
-      ctx.font = '11px system-ui, sans-serif';
+      ctx.font = '11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('温度 T (K) ➔', pdX + pdW / 2, pdY + pdH + 16);
       ctx.save();
@@ -2629,13 +2629,13 @@
       ctx.setLineDash([]);
 
       ctx.fillStyle = '#f43f5e';
-      ctx.font = 'bold 10px system-ui, sans-serif';
+      ctx.font = 'bold 10px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText(`势阱深度 −ε (${sub.name})`, ljX + rmPx + 6, minY - 4);
       ctx.restore();
 
       ctx.fillStyle = '#cbd5e1';
-      ctx.font = '11px system-ui, sans-serif';
+      ctx.font = '11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('分子核间距 r ➔', ljX + ljW / 2, ljY + ljH + 16);
     }
@@ -2969,7 +2969,7 @@
       ctx.lineWidth = 1.5;
       ctx.stroke();
       ctx.fillStyle = '#0f172a';
-      ctx.font = 'bold 14px system-ui, sans-serif';
+      ctx.font = 'bold 14px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText('⇄', leftX - 13, (topY + bottomY) / 2);
@@ -2981,7 +2981,7 @@
       ctx.lineTo(rightX, bottomY + 14);
       ctx.stroke();
       ctx.fillStyle = '#38bdf8';
-      ctx.font = 'bold 11px system-ui, sans-serif';
+      ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(`容器宽度 V ∝ ${widthNm} nm (可拖拽左侧黄柄改变体积)`, (leftX + rightX) / 2, bottomY + 26);
 
       for (const p of state.particles) {
@@ -3031,11 +3031,11 @@
       ctx.stroke();
 
       ctx.fillStyle = '#fde047';
-      ctx.font = 'bold 26px monospace';
+      ctx.font = 'bold 26px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.textAlign = 'center';
       ctx.fillText(String(state.wallCollisions), 650, 78);
       ctx.fillStyle = '#94a3b8';
-      ctx.font = '11px system-ui, sans-serif';
+      ctx.font = '11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText('采样周期 10 ps 内器壁碰撞次数', 650, 102);
 
       const unitBtn = {
@@ -3070,7 +3070,7 @@
 
       speciesRows.forEach((row) => {
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = 'bold 13px system-ui, sans-serif';
+        ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(row.label, 568, row.y);
 
@@ -3116,7 +3116,7 @@
         ctx.strokeStyle = '#475569';
         ctx.stroke();
         ctx.fillStyle = '#38bdf8';
-        ctx.font = 'bold 15px monospace';
+        ctx.font = 'bold 15px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'center';
         ctx.fillText(String(row.count), 805, row.y);
       });
@@ -3136,7 +3136,7 @@
         `• 轻粒子热运动速率约为重粒子的 √(28/4) ≈ 2.65 倍，`,
         `  但相同温度下两者平均平动动能 <E_k> = k_B T 完全相等！`
       ];
-      ctx.font = '12px system-ui, sans-serif';
+      ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       lawLines.forEach((ln, idx) => {
         ctx.fillStyle = idx >= 1 && idx <= 3 ? '#38bdf8' : '#cbd5e1';
@@ -3346,7 +3346,7 @@
         ctx.fillStyle = '#030712';
         ctx.fillRect(leftX - 4, topY + 8, 8, 58);
         ctx.fillStyle = '#f43f5e';
-        ctx.font = 'bold 11px system-ui, sans-serif';
+        ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'right';
         ctx.fillText('⬅ 逃逸孔已打开', leftX - 8, topY + 38);
       }
@@ -3356,7 +3356,7 @@
         ctx.fillStyle = state.holdConstant === 'P' ? '#38bdf8' : '#f59e0b';
         ctx.fill();
         ctx.fillStyle = '#0f172a';
-        ctx.font = 'bold 13px system-ui, sans-serif';
+        ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('⇄', leftX - 13, (topY + bottomY) / 2);
       }
@@ -3521,7 +3521,7 @@
       plotMBCurve(28, state.heavyCount, '#38bdf8');
       plotMBCurve(4, state.lightCount, '#f87171');
 
-      ctx.font = 'bold 10px system-ui, sans-serif';
+      ctx.font = 'bold 10px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillStyle = '#94a3b8';
       ctx.fillText('▬ 总分布直方图', gx + 10, gy + 16);
@@ -3531,7 +3531,7 @@
       ctx.fillText('━ 轻粒子 f_L(v)', gx + 198, gy + 16);
 
       ctx.fillStyle = '#cbd5e1';
-      ctx.font = '11px system-ui, sans-serif';
+      ctx.font = '11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('分子速率 v (m/s) ➔', gx + gw / 2, gy + gh + 18);
 
@@ -3557,7 +3557,7 @@
         `• 结论：同温下轻粒子速率峰值右移且分布更宽，`,
         `  但重粒子与轻粒子的平均平动动能严格相等！`
       ];
-      ctx.font = '12px system-ui, sans-serif';
+      ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       keLines.forEach((ln, idx) => {
         ctx.fillStyle = idx === 2 ? '#4ade80' : '#cbd5e1';
@@ -3829,7 +3829,7 @@
       const comRedX = cntRed > 0 ? sumRedX / cntRed : (midX + box.right) / 2;
 
       drawPanel(ctx, 14, 14, 532, 72, null, '#1e293b', '#334155');
-      ctx.font = 'bold 13px system-ui, sans-serif';
+      ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillStyle = '#60a5fa';
       ctx.fillText(`左室统计： 🔵 蓝粒子 = ${blueLeft}    🔴 红粒子 = ${redLeft}`, 28, 38);
@@ -3838,7 +3838,7 @@
 
       ctx.textAlign = 'right';
       ctx.fillStyle = '#fde047';
-      ctx.font = 'bold 15px monospace';
+      ctx.font = 'bold 15px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillText(`扩散计时 t = ${state.elapsedSec.toFixed(1)} ps`, 530, 52);
 
       drawPanel(ctx, 14, 90, 532, 436, null, '#111827', '#334155');
@@ -3941,7 +3941,7 @@
 
       drawPanel(ctx, 556, 14, 330, 290, '左右室粒子参数对比设置', '#1e293b', '#334155');
 
-      ctx.font = 'bold 13px system-ui, sans-serif';
+      ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillStyle = '#60a5fa';
       ctx.fillText('🔵 左室粒子 (1)', 685, 56);
@@ -4025,7 +4025,7 @@
 
       paramRows.forEach((pr) => {
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = 'bold 12px system-ui, sans-serif';
+        ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(pr.label, 568, pr.y);
 
@@ -4040,7 +4040,7 @@
         drawButton(ctx, p2Btn, false);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13px monospace';
+        ctx.font = 'bold 13px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'center';
         ctx.fillText(String(pr.v1), 685, pr.y);
         ctx.fillText(String(pr.v2), 815, pr.y);
@@ -4069,7 +4069,7 @@
         `  热运动速率越快，质心向对侧室迁移的速率也越快；`,
         `  达到热动平衡后，两室粒子均匀分布，质心重合于中央。`
       ];
-      ctx.font = '12px system-ui, sans-serif';
+      ctx.font = '12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       gLines.forEach((ln, idx) => {
         ctx.fillStyle = idx === 0 ? '#38bdf8' : idx <= 2 ? '#4ade80' : '#cbd5e1';

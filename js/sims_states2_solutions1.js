@@ -188,7 +188,7 @@
     ctx.fill();
 
     if (label) {
-      ctx.font = 'bold 11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       const tw = ctx.measureText(label).width;
       const lx = labelSide === 'left' ? x2 - tw - 14 : x2 + 8;
       const ly = y2 + 4;
@@ -209,7 +209,7 @@
     const ratio = clamp((value - min) / ((max - min) || 1), 0, 1);
 
     ctx.save();
-    ctx.font = '600 11.5px "Inter", "PingFang SC", sans-serif';
+    ctx.font = '600 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#1e293b';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'alphabetic';
@@ -268,7 +268,7 @@
       active ? activeBg : border,
       active ? 1.5 : 1
     );
-    ctx.font = `${active ? 'bold' : '600'} ${fontSize}px "Inter", "PingFang SC", sans-serif`;
+    ctx.font = `${active ? 'bold' : '600'} ${fontSize}px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif`;
     ctx.fillStyle = active ? activeFg : fg;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -298,7 +298,7 @@
       ctx.lineTo(x + 12.5, y + 4.5);
       ctx.stroke();
     }
-    ctx.font = '600 11.5px "Inter", "PingFang SC", sans-serif';
+    ctx.font = '600 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.fillStyle = '#1e293b';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
@@ -1005,7 +1005,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 44, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -1036,7 +1036,7 @@
 
       fillStrokeRoundRect(ctx, 14, 470, 615, 56, 8, '#cbd5e1', '#94a3b8', 1.5);
       ctx.fillStyle = '#64748b';
-      ctx.font = '600 11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '600 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText('提示：可直接拖拽物块放入水箱、压入水底或放到左侧电子秤上，也可点击右侧快捷按钮移动物块', 28, 502);
 
@@ -1047,12 +1047,12 @@
       ctx.fillRect(sx - 10, sy + 8, 20, 14);
       fillStrokeRoundRect(ctx, sx - 64, sy + 20, 128, 40, 8, '#1e293b', '#0f172a', 1.8);
       fillStrokeRoundRect(ctx, sx - 52, sy + 26, 104, 24, 5, '#064e3b', '#10b981', 1.2);
-      ctx.font = 'bold 14px "JetBrains Mono", monospace';
+      ctx.font = 'bold 14px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#34d399';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(`${state.scaleReadingKg.toFixed(2)} kg`, sx, sy + 38);
-      ctx.font = '600 11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '600 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#475569';
       ctx.fillText('精密电子秤', sx, sy - 115);
 
@@ -1077,7 +1077,7 @@
       ctx.stroke();
 
       ctx.save();
-      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       for (let vTick = 90; vTick <= 130; vTick += 5) {
         const yTick = tankBottomY - volumeToTankHeightPx(vTick);
         if (yTick < tk.y + 8 || yTick > tankBottomY - 6) continue;
@@ -1099,11 +1099,11 @@
 
       const badgeY = clamp(waterSurfaceY, tk.y + 18, tankBottomY - 20);
       fillStrokeRoundRect(ctx, tk.x - 102, badgeY - 19, 98, 38, 6, '#0f172a', '#0284c7', 1.5);
-      ctx.font = 'bold 12px "JetBrains Mono", monospace';
+      ctx.font = 'bold 12px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#38bdf8';
       ctx.textAlign = 'center';
       ctx.fillText(`${state.totalTankVolume.toFixed(2)} L`, tk.x - 53, badgeY - 5);
-      ctx.font = '600 10.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '600 10.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#fde047';
       ctx.fillText(`ΔV = +${state.displacedVolume.toFixed(2)} L`, tk.x - 53, badgeY + 11);
 
@@ -1123,12 +1123,12 @@
         fillStrokeRoundRect(ctx, bx, by, b.w, b.h, 6, b.color, isSelected ? '#0f172a' : b.stroke, isSelected ? 2.8 : 1.8);
 
         ctx.fillStyle = b.textColor || '#ffffff';
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(b.id === 'B1' ? b.label : b.id, b.x, b.y - 8);
 
-        ctx.font = '600 10.5px "JetBrains Mono", monospace';
+        ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         if (b.mystery && !state.revealMystery) {
           ctx.fillText('? kg', b.x, b.y + 8);
         } else {
@@ -1164,7 +1164,7 @@
       fillStrokeRoundRect(ctx, px, py, pw, ph, 10, '#ffffff', '#cbd5e1', 1.2);
 
       let cy = py + 22;
-      ctx.font = 'bold 13px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 13px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText(state.mode === 'custom' ? '自定义物块参数' : '当前选中物块与控制', px + 14, cy);
@@ -1333,12 +1333,12 @@
 
       if (state.mode === 'mystery') {
         fillStrokeRoundRect(ctx, px + 12, cy, pw - 24, ph - (cy - py) - 12, 8, '#f8fafc', '#cbd5e1', 1);
-        ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#0f172a';
         ctx.textAlign = 'left';
         ctx.fillText('密度参考鉴定表 (ρ = m / ΔV)', px + 20, cy + 16);
 
-        ctx.font = '10.5px "Inter", "PingFang SC", monospace';
+        ctx.font = '10.5px "Inter", "PingFang SC", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         MYSTERY_REFERENCE_TABLE.forEach((row, idx) => {
           const ry = cy + 33 + idx * 16.5;
           if (ry < py + ph - 18) {
@@ -1351,7 +1351,7 @@
           }
         });
         if (state.revealMystery && selBlock) {
-          ctx.font = 'bold 11px "Inter", "PingFang SC", sans-serif';
+          ctx.font = 'bold 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = '#b45309';
           ctx.textAlign = 'left';
           ctx.fillText(`当前 ${selBlock.id}: ${selBlock.trueName}`, px + 20, py + ph - 18);
@@ -1361,13 +1361,13 @@
         const isFloating = rhoB < state.fluidDensity;
         fillStrokeRoundRect(ctx, px + 12, cy, pw - 24, ph - (cy - py) - 12, 8, '#f0f9ff', '#bae6fd', 1.2);
         let ty = cy + 18;
-        ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#0369a1';
         ctx.textAlign = 'left';
         ctx.fillText(`物块 [${selBlock.id}] 实时阿基米德分析`, px + 20, ty);
         ty += 19;
 
-        ctx.font = '11px "Inter", "PingFang SC", sans-serif';
+        ctx.font = '11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         const lines = [
           `物块密度: ρ_物 = m/V = ${rhoB.toFixed(2)} kg/L`,
@@ -1599,7 +1599,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 44, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -1689,7 +1689,7 @@
           fillStrokeRoundRect(ctx, objX + 4, objY + 22, objW - 8, objH - 26, 4, rgbaStr(spec.color, 0.65), spec.stroke, 1);
           if (itemState.tempC >= 98) {
             ctx.fillStyle = 'rgba(148, 163, 184, 0.55)';
-            ctx.font = 'bold 11px "Inter", "PingFang SC", sans-serif';
+            ctx.font = 'bold 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText('♨ 沸腾蒸汽 (100°C)', sx, objY - 10);
           }
@@ -1697,7 +1697,7 @@
           fillStrokeRoundRect(ctx, objX, objY, objW, objH, 6, spec.color, spec.stroke, 2.2);
         }
 
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = spec.isLiquid ? '#0f172a' : '#ffffff';
         ctx.textAlign = 'center';
         ctx.fillText(spec.name, sx, objY + objH - 12);
@@ -1713,7 +1713,7 @@
             if (ey > objY + 6) {
               fillStrokeRoundRect(ctx, ex, ey, 14, 12, 2.5, '#ef4444', '#ffffff', 1);
               ctx.fillStyle = '#ffffff';
-              ctx.font = 'bold 8.5px monospace';
+              ctx.font = 'bold 8.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
               ctx.textAlign = 'center';
               ctx.textBaseline = 'middle';
               ctx.fillText('E', ex + 7, ey + 6.5);
@@ -1733,7 +1733,7 @@
         ctx.fill();
 
         fillStrokeRoundRect(ctx, sx - 58, objY - 38, 116, 26, 6, '#0f172a', '#334155', 1.2);
-        ctx.font = 'bold 12px "JetBrains Mono", monospace';
+        ctx.font = 'bold 12px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillStyle = '#38bdf8';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -1761,7 +1761,7 @@
           ctx.globalAlpha = clamp(p.alpha, 0, 1);
           fillStrokeRoundRect(ctx, p.x - 8, p.y - 7, 16, 14, 3, '#f97316', '#ffffff', 1);
           ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 9px monospace';
+          ctx.font = 'bold 9px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText('E', p.x, p.y);
@@ -1772,13 +1772,13 @@
       const px = 612, py = 64, pw = 274, ph = 460;
       fillStrokeRoundRect(ctx, px, py, pw, ph, 10, '#ffffff', '#cbd5e1', 1.2);
       let cy = py + 22;
-      ctx.font = 'bold 13px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 13px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('比热容对比实验控制', px + 14, cy);
       cy += 18;
 
-      ctx.font = '600 11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '600 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#475569';
       ctx.fillText('选择左实验台物质 (Stand 1):', px + 14, cy);
       cy += 10;
@@ -1857,7 +1857,7 @@
       cy += 36;
 
       fillStrokeRoundRect(ctx, px + 12, cy, pw - 24, ph - (cy - py) - 12, 8, '#f8fafc', '#cbd5e1', 1);
-      ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.fillText('比热容参数表 (Q = c · m · ΔT)', px + 20, cy + 18);
 
@@ -1865,7 +1865,7 @@
         const sp = SPECIFIC_HEAT_ITEMS[k];
         const stI = state.items[k];
         const ry = cy + 38 + idx * 24;
-        ctx.font = '600 11px "Inter", "PingFang SC", sans-serif';
+        ctx.font = '600 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#334155';
         ctx.textAlign = 'left';
         ctx.fillText(`${sp.name}: c=${sp.cp} J/(kg·K)`, px + 20, ry);
@@ -1884,7 +1884,7 @@
 
       stageBoxes.forEach(b => {
         fillStrokeRoundRect(ctx, b.x, b.y, b.w, b.h, 10, '#ffffff', '#cbd5e1', 1.5);
-        ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#0f172a';
         ctx.textAlign = 'center';
         ctx.fillText(b.title, b.x + b.w / 2, b.y + 22);
@@ -1906,7 +1906,7 @@
         ctx.beginPath();
         ctx.arc(sx, sy + 18, 28, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('🚴 骑车人 (化学能→机械能)', sx, sy - 42);
@@ -1926,7 +1926,7 @@
         });
       } else if (state.sourceType === 'faucet') {
         ctx.fillStyle = '#0284c7';
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('🚰 水龙头水流 (机械能)', sx, sy - 42);
         fillStrokeRoundRect(ctx, sx - 35, sy - 20, 45, 16, 4, '#64748b', '#334155', 1.5);
@@ -1934,7 +1934,7 @@
         ctx.fillRect(sx - 6, sy - 4, 14 + state.sourceIntensity * 10, 82);
       } else if (state.sourceType === 'sun') {
         ctx.fillStyle = '#ca8a04';
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('☀️ 太阳辐射 (光能)', sx, sy - 42);
         ctx.beginPath();
@@ -1946,7 +1946,7 @@
         ctx.stroke();
       } else if (state.sourceType === 'kettle') {
         ctx.fillStyle = '#dc2626';
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('🫖 蒸汽茶壶 (热能→机械能)', sx, sy - 42);
         fillStrokeRoundRect(ctx, sx - 34, sy - 5, 68, 52, 12, '#ef4444', '#991b1b', 2);
@@ -1956,7 +1956,7 @@
 
       const cx = 327, cy = 235;
       if (state.converterType === 'generator') {
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('⚙️ 电磁发电机 (机械→电)', cx, cy - 42);
@@ -1978,11 +1978,11 @@
         ctx.restore();
         if (state.sourceType === 'sun') {
           ctx.fillStyle = '#dc2626';
-          ctx.font = 'bold 10.5px "Inter", "PingFang SC", sans-serif';
+          ctx.font = 'bold 10.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText('⚠ 太阳光无法直接驱动水轮!', cx, cy + 75);
         }
       } else {
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('🟦 光伏太阳能板 (光→电)', cx, cy - 42);
@@ -1996,23 +1996,23 @@
         ctx.stroke();
         if (state.sourceType !== 'sun') {
           ctx.fillStyle = '#dc2626';
-          ctx.font = 'bold 10.5px "Inter", "PingFang SC", sans-serif';
+          ctx.font = 'bold 10.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText('⚠ 光伏板需要太阳光能输入!', cx, cy + 75);
         }
       }
 
       const ox = 537, oy = 235;
       if (state.outputType === 'heater') {
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('🌡️ 电热烧水器 (电→热能)', ox, oy - 42);
         fillStrokeRoundRect(ctx, ox - 38, oy - 16, 76, 72, 6, 'rgba(56,189,248,0.55)', '#0284c7', 2);
         ctx.fillStyle = '#dc2626';
-        ctx.font = 'bold 12px "JetBrains Mono", monospace';
+        ctx.font = 'bold 12px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillText(`${state.systemWaterTempC.toFixed(1)} °C`, ox, oy + 76);
       } else if (state.outputType === 'incandescent') {
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('💡 白炽灯 (电→光+大量热)', ox, oy - 42);
@@ -2024,13 +2024,13 @@
         ctx.lineWidth = 2;
         ctx.stroke();
       } else if (state.outputType === 'fluorescent') {
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('💡 节能荧光灯 (电→高光+少热)', ox, oy - 42);
         fillStrokeRoundRect(ctx, ox - 24, oy - 18, 48, 56, 12, '#fef08a', '#eab308', 2);
       } else {
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText('🌀 涡轮风扇 (电→机械风能)', ox, oy - 42);
@@ -2071,7 +2071,7 @@
           const spec = ENERGY_TYPES[eType] || ENERGY_TYPES.mechanical;
           fillStrokeRoundRect(ctx, pxPos - 9, pyPos - 9, 18, 18, 4, spec.color, spec.border, 1.5);
           ctx.fillStyle = spec.text;
-          ctx.font = 'bold 10px monospace';
+          ctx.font = 'bold 10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText('E', pxPos, pyPos);
@@ -2079,7 +2079,7 @@
       }
 
       fillStrokeRoundRect(ctx, 30, 365, 595, 155, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('五种能量粒子图例 (Energy Forms Legend):', 44, 386);
@@ -2088,12 +2088,12 @@
         const ly = 400;
         fillStrokeRoundRect(ctx, lx, ly, 18, 18, 4, et.color, et.border, 1.5);
         ctx.fillStyle = et.text;
-        ctx.font = 'bold 10px monospace';
+        ctx.font = 'bold 10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('E', lx + 9, ly + 9);
         ctx.fillStyle = '#1e293b';
-        ctx.font = '600 11.5px "Inter", "PingFang SC", sans-serif';
+        ctx.font = '600 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(et.name, lx + 24, ly + 9.5);
       });
@@ -2134,7 +2134,7 @@
       const px = 640, py = 64, pw = 246, ph = 456;
       fillStrokeRoundRect(ctx, px, py, pw, ph, 10, '#ffffff', '#cbd5e1', 1.2);
       let ry = py + 22;
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('① 选择能源 (Energy Source)', px + 14, ry);
@@ -2160,7 +2160,7 @@
       });
       ry += 76;
 
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.fillText('② 选择转换器 (Converter)', px + 14, ry);
       ry += 12;
@@ -2182,7 +2182,7 @@
       });
       ry += 48;
 
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.fillText('③ 选择用电器 (Output)', px + 14, ry);
       ry += 12;
@@ -2480,7 +2480,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 42, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -2541,7 +2541,7 @@
       ctx.lineTo(bk.x + bk.w - 3, liquidY);
       ctx.stroke();
 
-      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#334155';
       ctx.textAlign = 'right';
       for (let v = 0.2; v <= 1.001; v += 0.2) {
@@ -2571,7 +2571,7 @@
         }
         fillStrokeRoundRect(ctx, bk.x + bk.w / 2 - 72, bk.y + bk.h - 46, 144, 24, 6, 'rgba(15,23,42,0.86)', '#facc15', 1.5);
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(`已饱和! 沉淀 ${precipMoles.toFixed(2)} mol`, bk.x + bk.w / 2, bk.y + bk.h - 34);
@@ -2654,15 +2654,15 @@
       ctx.stroke();
 
       fillStrokeRoundRect(ctx, meterX, meterY, meterW, meterH, 8, '#1e1b4b', '#7c3aed', 2);
-      ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#c4b5fd';
       ctx.textAlign = 'center';
       ctx.fillText('浓度计 (mol/L)', meterX + meterW / 2, meterY + 20);
       fillStrokeRoundRect(ctx, meterX + 10, meterY + 32, meterW - 20, 32, 5, '#0f172a', '#6d28d9', 1.2);
-      ctx.font = 'bold 14px "JetBrains Mono", monospace';
+      ctx.font = 'bold 14px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#38bdf8';
       ctx.fillText(probeInLiquid ? `${dissolvedConc.toFixed(2)}` : '---', meterX + meterW / 2, meterY + 49);
-      ctx.font = '10px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '10px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#a5b4fc';
       ctx.fillText('可拖动探针至液面内', meterX + meterW / 2, meterY + 78);
 
@@ -2713,7 +2713,7 @@
       const px = 630, py = 62, pw = 256, ph = 462;
       fillStrokeRoundRect(ctx, px, py, pw, ph, 10, '#ffffff', '#cbd5e1', 1.2);
       let cy = py + 20;
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('加料方式 (Dispenser)', px + 14, cy);
@@ -2740,7 +2740,7 @@
       });
       cy += 42;
 
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.fillText('选择溶质 (9种化学物质与 c_sat)', px + 14, cy);
       cy += 10;
@@ -2761,7 +2761,7 @@
       });
       cy += SOLUTES_DB.length * 31 + 8;
 
-      ctx.font = '600 11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '600 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#334155';
       ctx.fillText(`当前体积 V = ${state.volumeL.toFixed(2)} L | 总溶质 n = ${state.soluteMoles.toFixed(2)} mol`, px + 14, cy + 8);
       ctx.fillText(`溶解浓度 c = ${dissolvedConc.toFixed(2)} M (饱和度 ${sol.cSat.toFixed(2)} M)`, px + 14, cy + 25);
@@ -2846,7 +2846,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 42, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -2862,7 +2862,7 @@
       });
 
       fillStrokeRoundRect(ctx, 16, 64, 232, 460, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 13px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 13px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('连续调节参数 (n 与 V)', 30, 90);
@@ -2900,12 +2900,12 @@
       });
 
       fillStrokeRoundRect(ctx, 28, 250, 208, 175, 8, '#f0f9ff', '#bae6fd', 1.2);
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0369a1';
       ctx.textAlign = 'left';
       ctx.fillText('摩尔浓度公式实时演算', 40, 272);
 
-      ctx.font = '600 11.5px "JetBrains Mono", monospace';
+      ctx.font = '600 11.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#0f172a';
       ctx.fillText(`n = ${n.toFixed(2)} mol`, 40, 298);
       ctx.fillText(`V = ${V.toFixed(2)} L`, 40, 320);
@@ -2913,7 +2913,7 @@
       ctx.fillStyle = '#475569';
       ctx.fillText(`饱和上限 c_sat = ${sol.cSat.toFixed(2)} M`, 40, 364);
       ctx.fillStyle = isSaturated ? '#dc2626' : '#16a34a';
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillText(
         isSaturated
           ? `⚠ 超出饱和! 析出 ${precipMoles.toFixed(2)} mol`
@@ -2952,7 +2952,7 @@
       ctx.lineTo(bx + bw - 3, liqY);
       ctx.stroke();
 
-      ctx.font = '600 11px "JetBrains Mono", monospace';
+      ctx.font = '600 11px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#334155';
       ctx.textAlign = 'right';
       for (let vTick = 0.2; vTick <= 1.001; vTick += 0.2) {
@@ -2981,7 +2981,7 @@
         }
         fillStrokeRoundRect(ctx, bx + bw / 2 - 68, by + bh - 48, 136, 26, 6, 'rgba(15,23,42,0.88)', '#facc15', 1.5);
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+        ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('已达饱和 (Saturated!)', bx + bw / 2, by + bh - 35);
@@ -2993,7 +2993,7 @@
       barGrad.addColorStop(1, sol.color);
       fillStrokeRoundRect(ctx, mx, my, mw, mh, 6, barGrad, '#334155', 2);
 
-      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#1e293b';
       ctx.textAlign = 'left';
       for (let mTick = 0; mTick <= 5; mTick += 1) {
@@ -3024,18 +3024,18 @@
       const curY = my + mh - clamp(dissolvedM / 5.0, 0, 1) * mh;
       fillStrokeRoundRect(ctx, mx - 56, curY - 12, 52, 24, 5, '#0f172a', sol.color, 1.5);
       ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 11px "JetBrains Mono", monospace';
+      ctx.font = 'bold 11px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(`${dissolvedM.toFixed(2)}M`, mx - 30, curY);
 
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.fillText('溶液浓度 M (mol/L)', mx + mw / 2, my - 16);
 
       const px = 630, py = 64, pw = 256, ph = 460;
       fillStrokeRoundRect(ctx, px, py, pw, ph, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 13px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 13px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('切换 9 种化学溶质 (Solutes)', px + 14, py + 24);
@@ -3170,7 +3170,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 42, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -3201,7 +3201,7 @@
 
       fillStrokeRoundRect(ctx, 28, 142, 86, 80, 8, '#334155', '#94a3b8', 1.8);
       ctx.fillStyle = '#e2e8f0';
-      ctx.font = 'bold 11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('单色光源', 71, 158);
       ctx.fillStyle = beamRgb.css;
@@ -3227,12 +3227,12 @@
 
       fillStrokeRoundRect(ctx, cuvX + cuvW - 12, cuvY + cuvH + 6, 24, 18, 4, '#f59e0b', '#ffffff', 1.2);
       ctx.fillStyle = '#0f172a';
-      ctx.font = 'bold 11px sans-serif';
+      ctx.font = 'bold 11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('↔', cuvX + cuvW, cuvY + cuvH + 16);
 
       fillStrokeRoundRect(ctx, cuvX, cuvY + cuvH + 26, 160, 18, 3, '#fef9c3', '#ca8a04', 1);
-      ctx.font = '600 9.5px "JetBrains Mono", monospace';
+      ctx.font = '600 9.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#1e293b';
       for (let cm = 0; cm <= 2.01; cm += 0.5) {
         const rx = cuvX + cm * 75;
@@ -3245,11 +3245,11 @@
         ctx.fillText(`${cm.toFixed(1)}`, rx, cuvY + cuvH + 41);
       }
       ctx.fillStyle = '#fde047';
-      ctx.font = 'bold 11px "JetBrains Mono", monospace';
+      ctx.font = 'bold 11px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillText(`b = ${b.toFixed(2)} cm`, cuvX + cuvW / 2, cuvY - 10);
 
       fillStrokeRoundRect(ctx, 375, 102, 134, 165, 10, '#1e293b', '#38bdf8', 1.8);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#e2e8f0';
       ctx.textAlign = 'center';
       ctx.fillText('光电检测器', 442, 120);
@@ -3278,7 +3278,7 @@
       });
 
       fillStrokeRoundRect(ctx, 385, 194, 114, 42, 6, '#022c22', '#10b981', 1.5);
-      ctx.font = 'bold 16px "JetBrains Mono", monospace';
+      ctx.font = 'bold 16px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#34d399';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -3289,7 +3289,7 @@
       } else {
         ctx.fillText(`${absorbance.toFixed(2)}`, 442, 215);
       }
-      ctx.font = '10px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '10px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#94a3b8';
       ctx.fillText(state.detectorMode === 'transmittance' ? 'T = 10^(-εbc)×100%' : 'A = -lg(T) = εbc', 442, 252);
 
@@ -3369,7 +3369,7 @@
         onChange: (val) => this.onControlChange(state, 'concentration', val)
       });
 
-      ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('切换 8 种标准有色溶液:', 328, 342);
@@ -3393,7 +3393,7 @@
       const rx = 532, rw = 354;
 
       fillStrokeRoundRect(ctx, rx, 62, rw, 224, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText(`吸收光谱曲线 ε(λ) — 特征峰 λ_max = ${sol.lambdaMax} nm`, rx + 14, 82);
@@ -3438,7 +3438,7 @@
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.font = '10px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#475569';
       ctx.textAlign = 'center';
       ctx.fillText('380 nm', gx1 + 16, gy1 + gh1 + 14);
@@ -3446,7 +3446,7 @@
       ctx.fillText('780 nm', gx1 + gw1 - 16, gy1 + gh1 + 14);
 
       fillStrokeRoundRect(ctx, rx, 296, rw, 228, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText(`A-c 标准工作曲线 (斜率 k = ε·b, A = ${absorbance.toFixed(2)})`, rx + 14, 316);
@@ -3484,7 +3484,7 @@
       ctx.lineWidth = 1.8;
       ctx.stroke();
 
-      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.font = '10px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#475569';
       ctx.textAlign = 'center';
       ctx.fillText(`0 ${sol.concUnit}`, gx2 + 12, gy2 + gh2 + 14);
@@ -3608,7 +3608,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 42, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -3618,16 +3618,16 @@
       fillStrokeRoundRect(ctx, sx, sy, sw, sh, 10, '#ffffff', '#cbd5e1', 1.2);
 
       fillStrokeRoundRect(ctx, sx + 14, sy + 14, sw - 28, 68, 8, '#0f172a', phToIndicatorColor(currentPh), 2.2);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#94a3b8';
       ctx.textAlign = 'left';
       ctx.fillText('数字 pH 计读数', sx + 24, sy + 32);
-      ctx.font = 'bold 26px "JetBrains Mono", monospace';
+      ctx.font = 'bold 26px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#38bdf8';
       ctx.fillText(vTot > 0.001 ? `pH ${currentPh.toFixed(2)}` : 'pH ---', sx + 24, sy + 64);
 
       fillStrokeRoundRect(ctx, sx + 14, sy + 90, sw - 28, 26, 6, phToIndicatorColor(currentPh), null, 0);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#ffffff';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -3640,7 +3640,7 @@
       phGrad.addColorStop(1.0, '#dc2626');
       fillStrokeRoundRect(ctx, barX, barY, barW, barH, 14, phGrad, '#334155', 1.8);
 
-      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.textAlign = 'left';
       for (let p = 0; p <= 14; p += 2) {
         const ty = barY + barH - (p / 14) * barH;
@@ -3659,7 +3659,7 @@
         const pyInd = barY + barH - (currentPh / 14.0) * barH;
         fillStrokeRoundRect(ctx, sx + 10, pyInd - 11, 44, 22, 4, '#0f172a', '#ffffff', 1.5);
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 11px "JetBrains Mono", monospace';
+        ctx.font = 'bold 11px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(currentPh.toFixed(2), sx + 32, pyInd);
@@ -3691,7 +3691,7 @@
         ctx.stroke();
       }
 
-      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#1e293b';
       ctx.textAlign = 'right';
       for (let v = 0.2; v <= 1.201; v += 0.2) {
@@ -3771,7 +3771,7 @@
         }
       });
 
-      ctx.font = '600 11px "Inter", "PingFang SC", sans-serif';
+      ctx.font = '600 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#334155';
       ctx.textAlign = 'center';
       ctx.fillText(
@@ -3782,7 +3782,7 @@
 
       const px = 612, py = 64, pw = 272, ph = 460;
       fillStrokeRoundRect(ctx, px, py, pw, ph, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 13px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 13px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('切换日常液体 (12种内置样品)', px + 14, py + 24);
@@ -3888,7 +3888,7 @@
       ctx.fillRect(0, 0, W, H);
 
       fillStrokeRoundRect(ctx, 14, 10, W - 28, 44, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 15px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 15px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
@@ -3920,7 +3920,7 @@
       const lx = 16, ly = 64, lw = 285, lh = 460;
       fillStrokeRoundRect(ctx, lx, ly, lw, lh, 10, '#ffffff', '#cbd5e1', 1.2);
 
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('25°C 离子浓度柱状图 (mol/L)', lx + 14, ly + 22);
@@ -3952,7 +3952,7 @@
       fillStrokeRoundRect(ctx, gx, gy, gw, gh, 6, '#f8fafc', '#94a3b8', 1.2);
 
       if (state.scaleMode === 'log') {
-        ctx.font = '9.5px "JetBrains Mono", monospace';
+        ctx.font = '9.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'right';
         for (let exp = -16; exp <= 2; exp += 2) {
           const yTick = gy + gh - ((exp + 16) / 18) * gh;
@@ -3979,16 +3979,16 @@
 
         bars.forEach(b => {
           fillStrokeRoundRect(ctx, b.x, gy + gh - b.h, 38, b.h, 4, rgbaStr(b.color, 0.85), b.color, 1.5);
-          ctx.font = 'bold 11px "Inter", "PingFang SC", sans-serif';
+          ctx.font = 'bold 11px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = b.color;
           ctx.textAlign = 'center';
           ctx.fillText(b.label, b.x + 19, gy + gh + 16);
-          ctx.font = '600 9.5px "JetBrains Mono", monospace';
+          ctx.font = '600 9.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.fillStyle = '#0f172a';
           ctx.fillText(b.label === 'H₂O' ? '55 M' : formatSci(b.val, 1), b.x + 19, Math.max(gy + 12, gy + gh - b.h - 6));
         });
       } else {
-        ctx.font = '9.5px "JetBrains Mono", monospace';
+        ctx.font = '9.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'right';
         for (let v = 0; v <= 1.01; v += 0.2) {
           const yTick = gy + gh - v * gh;
@@ -4008,22 +4008,22 @@
         ];
         bars.forEach(b => {
           fillStrokeRoundRect(ctx, b.x, gy + gh - Math.max(3, b.h), 38, Math.max(3, b.h), 4, rgbaStr(b.color, 0.85), b.color, 1.5);
-          ctx.font = 'bold 10.5px "Inter", "PingFang SC", sans-serif';
+          ctx.font = 'bold 10.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = b.color;
           ctx.textAlign = 'center';
           ctx.fillText(b.label, b.x + 19, gy + gh + 16);
-          ctx.font = '600 9.5px "JetBrains Mono", monospace';
+          ctx.font = '600 9.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.fillStyle = '#0f172a';
           ctx.fillText(b.val >= 10 ? '55 M↑' : formatSci(b.val, 1), b.x + 19, Math.max(gy + 12, gy + gh - b.h - 6));
         });
       }
 
       fillStrokeRoundRect(ctx, lx + 12, gy + gh + 28, lw - 24, 118, 8, '#f0fdf4', '#86efac', 1.2);
-      ctx.font = 'bold 11.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 11.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#166534';
       ctx.textAlign = 'left';
       ctx.fillText('25°C 水的离子积恒等式验证:', lx + 20, gy + gh + 46);
-      ctx.font = '600 10.5px "JetBrains Mono", monospace';
+      ctx.font = '600 10.5px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#0f172a';
       ctx.fillText(`pH = ${currentPh.toFixed(2)} | pOH = ${currentPoh.toFixed(2)}`, lx + 20, gy + gh + 66);
       ctx.fillText(`pH + pOH = ${(currentPh + currentPoh).toFixed(2)}`, lx + 20, gy + gh + 84);
@@ -4064,12 +4064,12 @@
       }
 
       fillStrokeRoundRect(ctx, bx, 64, bw, 44, 8, '#0f172a', phToIndicatorColor(currentPh), 2);
-      ctx.font = 'bold 16px "JetBrains Mono", monospace';
+      ctx.font = 'bold 16px "JetBrains Mono", "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
       ctx.fillStyle = '#38bdf8';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       ctx.fillText(`pH = ${currentPh.toFixed(2)}`, bx + 16, 86);
-      ctx.font = 'bold 12px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#fde047';
       ctx.textAlign = 'right';
       ctx.fillText(
@@ -4153,7 +4153,7 @@
 
       const rx = 608, ry = 64, rw = 276, rh = 460;
       fillStrokeRoundRect(ctx, rx, ry, rw, rh, 10, '#ffffff', '#cbd5e1', 1.2);
-      ctx.font = 'bold 12.5px "Inter", "PingFang SC", sans-serif';
+      ctx.font = 'bold 12.5px "Inter", "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.fillStyle = '#0f172a';
       ctx.textAlign = 'left';
       ctx.fillText('选择样品溶液 (点击切换并可加水稀释)', rx + 14, ry + 22);

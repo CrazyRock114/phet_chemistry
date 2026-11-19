@@ -68,7 +68,7 @@
       roundRect(ctx, x + 1, y + 1, w - 2, 28, 9);
       ctx.fill();
       ctx.fillStyle = opts.titleColor || '#e2e8f0';
-      ctx.font = 'bold 12.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.font = 'bold 12.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       ctx.fillText(title, x + 12, y + 15);
@@ -85,7 +85,7 @@
     ctx.strokeStyle = active ? '#93c5fd' : 'rgba(148, 163, 184, 0.4)';
     ctx.stroke();
     ctx.fillStyle = active ? '#ffffff' : '#cbd5e1';
-    ctx.font = (rect.font || 'bold 12px') + ' -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    ctx.font = (rect.font || 'bold 12px') + ' -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(label, rect.x + rect.w / 2, rect.y + rect.h / 2);
@@ -108,7 +108,7 @@
 
     if (symbol) {
       ctx.fillStyle = textColor;
-      ctx.font = `bold ${Math.max(8, Math.round(r * 1.05))}px -apple-system, BlinkMacSystemFont, sans-serif`;
+      ctx.font = `bold ${Math.max(8, Math.round(r * 1.05))}px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(symbol, x, y + 0.5);
@@ -297,7 +297,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('构建原子 (Build an Atom) — 核子组装、壳层排布与核素符号', 24, 30);
 
@@ -332,7 +332,7 @@
           ctx.restore();
 
           ctx.fillStyle = '#94a3b8';
-          ctx.font = '11px sans-serif';
+          ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`K层 (${m.kCount}/2)`, cx, cy - rK - 7);
           ctx.fillText(`L层 (${m.lCount}/8)`, cx, cy - rL - 7);
@@ -385,7 +385,7 @@
             ctx.fill();
           });
           ctx.fillStyle = '#94a3b8';
-          ctx.font = '11.5px sans-serif';
+          ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`电子云概率密度 |ψ|² (1s: ${m.kCount}e⁻, 2s/2p: ${m.lCount}e⁻)`, cx, cy - rL - 10);
           ctx.restore();
@@ -413,12 +413,12 @@
 
         ctx.save();
         ctx.textAlign = 'center';
-        ctx.font = 'bold 15px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 15px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#f8fafc';
         ctx.fillText(`${m.el.zh} (${m.el.en}, ${m.el.sym}-${m.A})`, cx, 102);
 
         const ionColor = m.q === 0 ? '#10b981' : (m.q > 0 ? '#f59e0b' : '#38bdf8');
-        ctx.font = 'bold 12.5px sans-serif';
+        ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = ionColor;
         ctx.fillText(m.chargeStr, cx, 122);
 
@@ -439,14 +439,14 @@
             drawSphere3D(ctx, b.rect.x + 28 + k * 18, b.rect.y + 24 + (k % 2) * 8, 7.5, b.color, b.hi, b.sym);
           }
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 11.5px sans-serif';
+          ctx.font = 'bold 11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(b.title, b.rect.x + b.rect.w / 2, b.rect.y + 52);
 
           drawButton(ctx, b.minus, '−', false, '#475569');
           drawButton(ctx, b.plus, '+', true, b.color === '#64748b' ? '#475569' : b.color);
           ctx.fillStyle = '#94a3b8';
-          ctx.font = '11px sans-serif';
+          ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText('点击或拖拽', b.rect.x + b.rect.w / 2, b.minus.y + 13);
         });
 
@@ -475,13 +475,13 @@
           ctx.stroke();
 
           ctx.fillStyle = isCurrent ? '#ffffff' : (isSelectable ? '#e2e8f0' : '#64748b');
-          ctx.font = '9px sans-serif';
+          ctx.font = '9px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(String(z), cx0 + 3, cy0 + 9);
-          ctx.font = 'bold 12px sans-serif';
+          ctx.font = 'bold 12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(el.sym, cx0 + cellW / 2, cy0 + 21);
-          ctx.font = '8.5px sans-serif';
+          ctx.font = '8.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(el.zh, cx0 + cellW / 2, cy0 + 30);
         }
 
@@ -495,23 +495,23 @@
 
         ctx.textAlign = 'right';
         ctx.fillStyle = '#fbbf24';
-        ctx.font = 'bold 18px sans-serif';
+        ctx.font = 'bold 18px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(String(m.A), 580, 290);
         ctx.fillStyle = '#f87171';
         ctx.fillText(String(m.Z), 580, 336);
 
         ctx.textAlign = 'center';
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 38px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 38px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(m.el.sym, 610, 316);
 
         ctx.textAlign = 'left';
         ctx.fillStyle = m.q === 0 ? '#34d399' : (m.q > 0 ? '#fbbf24' : '#38bdf8');
-        ctx.font = 'bold 17px sans-serif';
+        ctx.font = 'bold 17px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(m.q === 0 ? '0' : m.symCharge, 640, 288);
 
         ctx.textAlign = 'left';
-        ctx.font = '12.5px sans-serif';
+        ctx.font = '12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#fbbf24';
         ctx.fillText(`• 质量数 A = Z + N = ${m.Z} + ${m.N} = ${m.A}`, 688, 278);
         ctx.fillStyle = '#f87171';
@@ -523,7 +523,7 @@
 
         drawPanel(ctx, 525, 382, 355, 135, '质量数天平与净电荷仪表盘');
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '12px sans-serif';
+        ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(`质量数 A = ${m.A} u (精确约 ${m.exactMass.toFixed(4)} amu)`, 542, 426);
         roundRect(ctx, 542, 434, 320, 14, 7);
@@ -812,7 +812,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('同位素与原子质量 (Isotopes and Atomic Mass) — 精确原子质量与加权丰度', 24, 28);
 
@@ -826,7 +826,7 @@
           const active = state.element === k;
           drawButton(ctx, { x: rx, y: ry, w: 47, h: 32 }, `${el.sym}`, active, '#3b82f6');
           ctx.fillStyle = active ? '#e0f2fe' : '#94a3b8';
-          ctx.font = '9px sans-serif';
+          ctx.font = '9px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(el.zh, rx + 23.5, ry + 26);
         });
@@ -861,10 +861,10 @@
 
           ctx.textAlign = 'center';
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 16px sans-serif';
+          ctx.font = 'bold 16px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`${m.el.sym}-${m.A}  (${m.name})`, cx, 134);
           ctx.fillStyle = m.stable ? '#34d399' : '#f87171';
-          ctx.font = 'bold 12.5px sans-serif';
+          ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(m.stable ? `● 稳定同位素 | 质子 Z=${m.el.z}, 中子 N=${m.N}` : `⚠ 不稳定同位素 | 质子 Z=${m.el.z}, 中子 N=${m.N}`, cx, 155);
 
           ctx.fillStyle = '#475569';
@@ -882,11 +882,11 @@
           ctx.fillStyle = '#064e3b';
           ctx.fill();
           ctx.fillStyle = '#34d399';
-          ctx.font = 'bold 21px "SFMono-Regular", Consolas, monospace';
+          ctx.font = 'bold 21px "SFMono-Regular", Consolas, "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.fillText(`${m.exactMass.toFixed(5)} amu`, cx, 405);
           ctx.fillStyle = '#a7f3d0';
-          ctx.font = '10.5px sans-serif';
+          ctx.font = '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`质量数 A = ${m.A} u | 质量亏损 Δm = ${(m.el.z * 1.007825 + m.N * 1.008665 - m.exactMass).toFixed(4)} u`, cx, 421);
 
           drawButton(ctx, { x: 84, y: 458, w: 145, h: 36 }, '− 移除 1 个中子 (n⁰)', false, '#475569');
@@ -919,11 +919,11 @@
 
           ctx.textAlign = 'center';
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 14px sans-serif';
+          ctx.font = 'bold 14px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`当前核素 ${m.el.sym}-${m.A} 自然界丰度: ${m.abundance.toFixed(4)}%`, pieCx, 338);
 
           let rowY = 370;
-          ctx.font = 'bold 12px sans-serif';
+          ctx.font = 'bold 12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = '#94a3b8';
           ctx.textAlign = 'left';
           ctx.fillText('同位素', 524, rowY);
@@ -944,7 +944,7 @@
             ctx.fill();
 
             ctx.fillStyle = isCurr ? '#ffffff' : '#cbd5e1';
-            ctx.font = isCurr ? 'bold 12.5px sans-serif' : '12px sans-serif';
+            ctx.font = isCurr ? 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif' : '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
             ctx.fillText(`${m.el.sym}-${iso.A} (N=${iso.N})`, 542, rowY);
             ctx.fillText(`${iso.mass.toFixed(5)}`, 615, rowY);
             ctx.fillText(iso.abundance > 0 ? `${iso.abundance}%` : '痕量/不稳定', 745, rowY);
@@ -978,7 +978,7 @@
           }
 
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 12.5px sans-serif';
+          ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`拖拽调节比例: ${m.el.sym}-${m.iso1.A}: ${state.fraction1.toFixed(1)}%  |  ${m.el.sym}-${m.iso2.A}: ${(100 - state.fraction1).toFixed(1)}%`, 46, 404);
 
@@ -1009,15 +1009,15 @@
           ctx.fillStyle = 'rgba(30, 41, 59, 0.92)';
           ctx.fill();
           ctx.fillStyle = '#93c5fd';
-          ctx.font = 'bold 13px sans-serif';
+          ctx.font = 'bold 13px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`• 同位素① ${m.el.sym}-${m.iso1.A}: m₁ = ${m.iso1.mass.toFixed(5)} amu, f₁ = ${(m.f1 * 100).toFixed(2)}%`, 536, 154);
           ctx.fillStyle = '#6ee7b7';
           ctx.fillText(`• 同位素② ${m.el.sym}-${m.iso2.A}: m₂ = ${m.iso2.mass.toFixed(5)} amu, f₂ = ${(m.f2 * 100).toFixed(2)}%`, 536, 180);
           ctx.fillStyle = '#fbbf24';
-          ctx.font = 'bold 14px sans-serif';
+          ctx.font = 'bold 14px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`M̄ = ${(m.f1).toFixed(4)}×${m.iso1.mass.toFixed(3)} + ${(m.f2).toFixed(4)}×${m.iso2.mass.toFixed(3)}`, 536, 210);
-          ctx.font = 'bold 18px sans-serif';
+          ctx.font = 'bold 18px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = '#f8fafc';
           ctx.fillText(`当前混合平均质量 M̄ = ${m.avgMass.toFixed(4)} amu`, 536, 238);
 
@@ -1033,7 +1033,7 @@
           drawSphere3D(ctx, scaleX + scaleW, scaleY - 16, Math.max(8, 20 * m.f2), '#10b981', '#6ee7b7', '');
 
           ctx.textAlign = 'center';
-          ctx.font = '11.5px sans-serif';
+          ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = '#93c5fd';
           ctx.fillText(`${m.iso1.mass.toFixed(2)} u`, scaleX, scaleY - 42);
           ctx.fillStyle = '#6ee7b7';
@@ -1048,7 +1048,7 @@
           ctx.lineTo(fx + 14, scaleY + 28);
           ctx.closePath();
           ctx.fill();
-          ctx.font = 'bold 13px sans-serif';
+          ctx.font = 'bold 13px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`▲ M̄ = ${m.avgMass.toFixed(4)} amu`, fx, scaleY + 46);
 
           const tNat = clamp((m.el.stdWeight - m.iso1.mass) / ((m.iso2.mass - m.iso1.mass) || 1), 0, 1);
@@ -1061,7 +1061,7 @@
           ctx.stroke();
           ctx.setLineDash([]);
           ctx.fillStyle = '#34d399';
-          ctx.font = '11.5px sans-serif';
+          ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`IUPAC 标准原子量: ${m.el.stdWeight} amu`, 689, 445);
           ctx.fillStyle = '#94a3b8';
           ctx.fillText(`与自然界标准偏差: ${(m.avgMass - m.el.stdWeight >= 0 ? '+' : '') + (m.avgMass - m.el.stdWeight).toFixed(4)} amu`, 689, 468);
@@ -1316,7 +1316,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('构建原子核 (Build a Nucleus) — 核力壳层、N-Z 稳定谷与放射性衰变通道', 24, 28);
 
@@ -1359,7 +1359,7 @@
           ctx.setLineDash([]);
           drawSphere3D(ctx, px, py, 10, da.color, '#ffffff', '★');
           ctx.fillStyle = '#fef08a';
-          ctx.font = 'bold 12px sans-serif';
+          ctx.font = 'bold 12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`发射: ${da.label}`, px + 14, py + 4);
           ctx.restore();
@@ -1372,7 +1372,7 @@
           { name: '1f₇/₂ (cap 8)',  cap: 8,  y: 102 }
         ];
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = 'bold 11.5px sans-serif';
+        ctx.font = 'bold 11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('核壳层能级 (质子 p⁺ / 中子 n⁰)', 355, 84);
 
@@ -1403,7 +1403,7 @@
           }
 
           ctx.fillStyle = '#94a3b8';
-          ctx.font = '9.5px sans-serif';
+          ctx.font = '9.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(lv.name, 354, lv.y + 13);
         });
@@ -1416,20 +1416,20 @@
         ctx.stroke();
 
         ctx.textAlign = 'left';
-        ctx.font = 'bold 14px sans-serif';
+        ctx.font = 'bold 14px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#f8fafc';
         ctx.fillText(`核素: ${info.el.sym}-${info.A} (Z=${info.Z}, N=${info.N})  |  比结合能 B/A ≈ ${bPerA.toFixed(2)} MeV/核子`, 54, 316);
         ctx.fillStyle = info.color;
         ctx.fillText(`主导通道: ${info.mode}   |   半衰期 t₁/₂: ${info.halfLife}`, 54, 342);
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '13px sans-serif';
+        ctx.font = '13px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(`核反应方程: ${info.eq}`, 54, 368);
         ctx.fillStyle = '#94a3b8';
-        ctx.font = '12px sans-serif';
+        ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(`中质比 N/Z = ${(info.N / info.Z).toFixed(2)}  (轻核稳定带 N/Z ≈ 1.00 ~ 1.20)`, 54, 394);
         if (state.decayAnim) {
           ctx.fillStyle = '#fef08a';
-          ctx.font = 'bold 12.5px sans-serif';
+          ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(`⚡ 已触发衰变: ${state.decayAnim.eq}`, 54, 422);
         } else {
           ctx.fillStyle = '#64748b';
@@ -1478,7 +1478,7 @@
         ctx.restore();
 
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '10px sans-serif';
+        ctx.font = '10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         for (let n = 0; n <= 25; n += 5) {
           ctx.fillText(String(n), gridX + n * cw + cw / 2, gridY + 20 * ch + 13);
@@ -1504,7 +1504,7 @@
           ctx.fillStyle = it.color;
           ctx.fillRect(lx, ly - 8, 10, 10);
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '11px sans-serif';
+          ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(it.label, lx + 14, ly);
         });
@@ -1701,7 +1701,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('卢瑟福 α 粒子散射实验 (Rutherford Scattering) — 库仑双曲线轨道与模型对比', 24, 28);
 
@@ -1741,7 +1741,7 @@
             drawSphere3D(ctx, 310 + rx + jx, 278 + ry + jy, 6.5, '#38bdf8', '#e0f2fe', '-');
           });
           ctx.fillStyle = '#fda4af';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('均匀正电荷球体 + 镶嵌电子 (库仑场抵消，α粒子几乎无偏转 θ ≈ 0°)', 310, 456);
         } else if (state.mode === 'rutherford-foil') {
@@ -1766,7 +1766,7 @@
           ctx.stroke();
           ctx.setLineDash([]);
           ctx.fillStyle = '#fbbf24';
-          ctx.font = '11px sans-serif';
+          ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`最短距离 d₀ = ${d0_fm.toFixed(1)} fm`, nx, ny + d0Px + 14);
 
@@ -1795,7 +1795,7 @@
         ctx.fill();
         ctx.textAlign = 'left';
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = 'bold 12.5px sans-serif';
+        ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('• 库仑排斥力: F = k Z₁Z₂e² / r²', 602, 144);
         ctx.fillStyle = '#93c5fd';
         ctx.fillText('• 散射角公式: tan(θ/2) = d₀ / (2b)', 602, 168);
@@ -1807,7 +1807,7 @@
         ctx.fillText(`• 累计探测 α 粒子总数: N = ${state.stats.total}`, 602, 238);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 12.5px sans-serif';
+        ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('散射角区间统计 N(θ):', 590, 274);
 
         const binLabels = [
@@ -1824,7 +1824,7 @@
           const pct = (count / total) * 100;
           const by = 294 + idx * 52;
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '11.5px sans-serif';
+          ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`${lbl}: ${count} (${pct.toFixed(1)}%)`, 590, by);
 
@@ -2075,7 +2075,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('氢原子模型演进与光谱仪 (Models of the Hydrogen Atom) — 6种历史与量子模型', 24, 28);
 
@@ -2093,7 +2093,7 @@
         if (state.mode === 'dalton') {
           drawSphere3D(ctx, cx, cy, 42, '#f59e0b', '#fef08a', 'H');
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('不可分割的实心弹性球体 (无内部亚原子结构与能级)', cx, 355);
         } else if (state.mode === 'thomson') {
@@ -2107,7 +2107,7 @@
           const ex = cx + Math.sin(state.time * 16) * (state.thomsonAmp || 3);
           drawSphere3D(ctx, ex, cy, 8, '#38bdf8', '#e0f2fe', '-');
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('均匀正电荷球内单电子简谐振动 (仅单一谐振频率)', cx, 355);
         } else if (state.mode === 'rutherford') {
@@ -2141,7 +2141,7 @@
           const ang = state.time * (3.2 / state.nLevel);
           drawSphere3D(ctx, cx + Math.cos(ang) * rN, cy + Math.sin(ang) * rN, 7.5, '#38bdf8', '#e0f2fe', '-');
           ctx.fillStyle = '#93c5fd';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`玻尔量子化圆轨道: n = ${state.nLevel}, E_${state.nLevel} = ${(-13.6 / (state.nLevel * state.nLevel)).toFixed(2)} eV`, cx, 366);
         } else if (state.mode === 'debroglie') {
@@ -2167,7 +2167,7 @@
           ctx.closePath();
           ctx.stroke();
           ctx.fillStyle = '#38bdf8';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`德布罗意驻波条件: 2πr = nλ (当前波节数 n = ${state.nLevel})`, cx, 366);
         } else if (state.mode === 'schrodinger') {
@@ -2197,7 +2197,7 @@
             }
           }
           ctx.fillStyle = '#c084fc';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`薛定谔波函数概率密度云 |ψ_${sub}|² (主量子数 n=${state.nLevel})`, cx, 366);
         }
@@ -2219,7 +2219,7 @@
         roundRect(ctx, cx - 26, 376, 52, 22, 5);
         ctx.fill();
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = '10px sans-serif';
+        ctx.font = '10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(state.lightType === 'white' ? '白光光源' : `${state.wavelength}nm`, cx, 390);
 
@@ -2244,7 +2244,7 @@
           ctx.stroke();
 
           ctx.fillStyle = isCurr ? '#38bdf8' : '#cbd5e1';
-          ctx.font = isCurr ? 'bold 11.5px sans-serif' : '11px sans-serif';
+          ctx.font = isCurr ? 'bold 11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif' : '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'right';
           ctx.fillText(`n=${n}`, 540, ly + 4);
           ctx.textAlign = 'left';
@@ -2270,7 +2270,7 @@
         });
 
         ctx.fillStyle = '#fbbf24';
-        ctx.font = '11.5px sans-serif';
+        ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(state.lastTransition, 496, 384);
 
@@ -2322,14 +2322,14 @@
           ctx.lineTo(lx, specY + specH - 3);
           ctx.stroke();
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = '9.5px sans-serif';
+          ctx.font = '9.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(`${Math.round(sl.nm)}nm`, lx, specY - 3);
           ctx.restore();
         });
 
         ctx.fillStyle = '#94a3b8';
-        ctx.font = '11px sans-serif';
+        ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('紫外区 UV (Lyman 90~380 nm)', specX + 120, specY + specH + 15);
         ctx.fillText('可见光区 Visible (Balmer 380~750 nm)', specX + 390, specY + specH + 15);
@@ -2556,7 +2556,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('α 衰变与量子隧穿效应 (Alpha Decay) — 核势阱库仑势垒与指数半衰期曲线', 24, 28);
 
@@ -2607,7 +2607,7 @@
         ctx.stroke();
         ctx.setLineDash([]);
         ctx.fillStyle = '#fbbf24';
-        ctx.font = '10.5px sans-serif';
+        ctx.font = '10.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('1个半衰期 t₁/₂', hlX, gy + gh + 11);
 
@@ -2626,7 +2626,7 @@
 
         const undecayedCount = state.nuclei.filter((n) => !n.decayed).length;
         ctx.textAlign = 'left';
-        ctx.font = 'bold 12px sans-serif';
+        ctx.font = 'bold 12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#c084fc';
         ctx.fillText(`● 未衰变母核: ${undecayedCount} / ${totalN}`, 652, 130);
         ctx.fillStyle = '#34d399';
@@ -2657,7 +2657,7 @@
           drawSphere3D(ctx, ax, ncy, 10, '#a855f7', '#f3e8ff', 'α');
 
           ctx.textAlign = 'left';
-          ctx.font = 'bold 13.5px sans-serif';
+          ctx.font = 'bold 13.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = state.singleDecayed ? '#34d399' : '#fbbf24';
           ctx.fillText(
             state.singleDecayed
@@ -2667,7 +2667,7 @@
             274
           );
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '12px sans-serif';
+          ctx.font = '12px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText('经典力学中 E < Vb 无法翻越势垒；量子力学中透射系数 T ≈ exp(-2∫√(2m(V(r)-E))/ℏ dr) > 0', 345, 302);
         } else {
           drawPanel(ctx, 24, 208, 852, 136, `多核统计衰变阵列 (共 60 个 ${p.base.parent} 母核随机独立隧穿)`);
@@ -2750,7 +2750,7 @@
         ctx.stroke();
 
         ctx.fillStyle = '#e2e8f0';
-        ctx.font = '11.5px sans-serif';
+        ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(`势垒高度 Vb = ${p.Vb.toFixed(1)} MeV  |  衰变能 Qα = ${p.Q.toFixed(2)} MeV  |  经典禁戒区 R₀ → R_b 指数衰减隧穿`, 430, 498);
       },
@@ -2967,7 +2967,7 @@
         ctx.fillRect(0, 0, W, H);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('β 衰变与中微子三体连续能谱 (Beta Decay) — 弱相互作用核子转化与费米能谱', 24, 28);
 
@@ -3000,7 +3000,7 @@
 
           ctx.textAlign = 'center';
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 15px sans-serif';
+          ctx.font = 'bold 15px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(state.singleDecayed ? `子核: ${info.daughter}` : `母核: ${info.parent}`, cx, 142);
 
           const eMeV = state.lastEnergyFrac * info.Q;
@@ -3009,7 +3009,7 @@
           ctx.fillStyle = 'rgba(30, 41, 59, 0.92)';
           ctx.fill();
           ctx.textAlign = 'left';
-          ctx.font = 'bold 12.5px sans-serif';
+          ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillStyle = '#fbbf24';
           ctx.fillText(`本次三体衰变总能量分配 Q_β = ${info.qLabel}:`, 58, 396);
           ctx.fillStyle = info.type === 'β⁻' ? '#38bdf8' : '#f97316';
@@ -3037,7 +3037,7 @@
           });
           const rem = state.nuclei.filter((n) => !n.decayed).length;
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 13px sans-serif';
+          ctx.font = 'bold 13px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`未衰变母核: ${rem} / 48  |  已衰变子核: ${48 - rem} / 48  |  半衰期 t₁/₂ = ${info.halfLifeLabel}`, 44, 430);
           drawButton(ctx, { x: 44, y: 454, w: 185, h: 36 }, '↻ 重置 48 个母核阵列', false, '#475569');
@@ -3063,7 +3063,7 @@
           ctx.arc(ep.nuX, ep.nuY, 6, 0, Math.PI * 2);
           ctx.stroke();
           ctx.fillStyle = '#6ee7b7';
-          ctx.font = '10px sans-serif';
+          ctx.font = '10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(ep.isPlus ? 'νₑ' : 'ν̄ₑ', ep.nuX + 8, ep.nuY + 3);
         });
@@ -3096,7 +3096,7 @@
         ctx.stroke();
 
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '11px sans-serif';
+        ctx.font = '11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('0', sx, sy + sh + 14);
         ctx.fillStyle = '#38bdf8';
@@ -3108,13 +3108,13 @@
         ctx.fillStyle = 'rgba(30, 41, 59, 0.92)';
         ctx.fill();
         ctx.textAlign = 'left';
-        ctx.font = 'bold 12.5px sans-serif';
+        ctx.font = 'bold 12.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillStyle = '#f8fafc';
         ctx.fillText(`• 核素: ${info.parent}  |  衰变类型: ${info.type}  |  t₁/₂ = ${info.halfLifeLabel}`, 506, 366);
         ctx.fillStyle = '#93c5fd';
         ctx.fillText('• 为什么 β 能谱是连续谱？(泡利 1930 中微子假说)', 506, 392);
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '11.5px sans-serif';
+        ctx.font = '11.5px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('  若为二体衰变，电子动能应固定等于 Q；正是因为中微子 ν 与', 506, 414);
         ctx.fillText('  电子及反冲子核三体共同分配动量与能量，电子动能呈 0 ~ Q_max', 506, 434);
         ctx.fillText(`  连续分布 (累计采样数: ${state.totalDecays} 次)。`, 506, 454);

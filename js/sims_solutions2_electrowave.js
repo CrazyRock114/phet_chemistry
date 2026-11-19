@@ -71,7 +71,7 @@
     const textCol = active ? '#0f172a' : '#e2e8f0';
     roundRect(ctx, rect.x, rect.y, rect.w, rect.h, rect.r || 6, bg, border, active ? 1.8 : 1.2);
     ctx.fillStyle = textCol;
-    ctx.font = (active ? 'bold ' : '600 ') + (rect.fontSize || 12) + 'px system-ui, -apple-system, sans-serif';
+    ctx.font = (active ? 'bold ' : '600 ') + (rect.fontSize || 12) + 'px system-ui, -apple-system, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(label, rect.x + rect.w / 2, rect.y + rect.h / 2);
@@ -80,12 +80,12 @@
   function drawSlider(ctx, rect, label, valText, ratio, accentColor) {
     const accent = accentColor || '#38bdf8';
     ctx.fillStyle = '#cbd5e1';
-    ctx.font = '600 11.5px system-ui, -apple-system, sans-serif';
+    ctx.font = '600 11.5px system-ui, -apple-system, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'bottom';
     ctx.fillText(label, rect.x, rect.y - 4);
     ctx.fillStyle = accent;
-    ctx.font = 'bold 11.5px monospace';
+    ctx.font = 'bold 11.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
     ctx.textAlign = 'right';
     ctx.fillText(valText, rect.x + rect.w, rect.y - 4);
 
@@ -130,7 +130,7 @@
     ctx.fill();
 
     if (label) {
-      ctx.font = 'bold 11px system-ui, sans-serif';
+      ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
       ctx.fillText(label, (x1 + x2) / 2, Math.min(y1, y2) - 5);
@@ -792,14 +792,14 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('酸碱溶液电离平衡仿真 (Acid-Base Solutions)', 28, 33);
 
         roundRect(ctx, 370, 17, 290, 32, 8, '#0f172a', '#38bdf8', 1.2);
         ctx.fillStyle = '#38bdf8';
-        ctx.font = 'bold 13px system-ui, sans-serif';
+        ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(eq.equation, 515, 33);
 
@@ -840,7 +840,7 @@
         ctx.stroke();
 
         ctx.fillStyle = '#94a3b8';
-        ctx.font = '10px monospace';
+        ctx.font = '10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'right';
         for (let ml = 200; ml <= 800; ml += 200) {
           const gy = beakerY + beakerH - (ml / 1000) * beakerH;
@@ -964,7 +964,7 @@
           ctx.stroke();
 
           ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 8.5px system-ui, sans-serif';
+          ctx.font = 'bold 8.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(lbl, px, py);
@@ -992,13 +992,13 @@
           const meterY = 74;
           drawShadowCard(ctx, meterX, meterY, 152, 62, 8, '#0f172a', '#38bdf8');
           ctx.fillStyle = '#94a3b8';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('数字 pH 计 (可拖拽探针)', meterX + 10, meterY + 18);
 
           roundRect(ctx, meterX + 10, meterY + 26, 132, 28, 5, '#022c22', '#10b981', 1.2);
           ctx.fillStyle = '#34d399';
-          ctx.font = 'bold 17px monospace';
+          ctx.font = 'bold 17px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.fillText(immersed ? `pH = ${eq.pH.toFixed(2)}` : 'pH = ---', meterX + 76, meterY + 41);
 
@@ -1031,7 +1031,7 @@
           const chartY = 68;
           drawShadowCard(ctx, chartX, chartY, 212, 122, 8, '#0f172a', '#475569');
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 11.5px system-ui, sans-serif';
+          ctx.font = 'bold 11.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('广泛 pH 试纸标准比色卡 (0 ~ 14)', chartX + 10, chartY + 18);
 
@@ -1048,7 +1048,7 @@
               ctx.strokeRect(bx - 2, by - 1, 30, 11.5);
             }
             ctx.fillStyle = Math.round(eq.pH) === i ? '#38bdf8' : '#cbd5e1';
-            ctx.font = (Math.round(eq.pH) === i ? 'bold ' : '') + '10px monospace';
+            ctx.font = (Math.round(eq.pH) === i ? 'bold ' : '') + '10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
             ctx.textAlign = 'left';
             ctx.fillText(`pH ${i}`, bx + 32, by + 5);
           }
@@ -1074,7 +1074,7 @@
 
           roundRect(ctx, elecRightX - 24, 134, 48, 20, 4, '#dc2626', '#f8fafc', 1);
           ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 9px monospace';
+          ctx.font = 'bold 9px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.fillText('9V DC', elecRightX, 144);
 
@@ -1127,7 +1127,7 @@
           roundRect(ctx, bulbCX - 10, bulbCY + 18, 20, 11, 3, '#64748b', '#cbd5e1', 1);
 
           ctx.fillStyle = '#fde047';
-          ctx.font = 'bold 11px monospace';
+          ctx.font = 'bold 11px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.fillText(
             circuitClosed ? `导电亮度: ${(bLevel * 100).toFixed(0)}% (总离子 ${formatSci(eq.totalIons, 2)} M)` : '电极未浸入溶液 (断路)',
@@ -1140,7 +1140,7 @@
         drawShadowCard(ctx, chartCard.x, chartCard.y, chartCard.w, chartCard.h, 10, '#1e293b', '#334155');
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13.5px system-ui, sans-serif';
+        ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('平衡浓度对数柱状图 (mol/L)', chartCard.x + 14, chartCard.y + 22);
 
@@ -1153,7 +1153,7 @@
 
         const minExp = -14;
         const maxExp = 2;
-        ctx.font = '10px monospace';
+        ctx.font = '10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
         for (let exp = -14; exp <= 2; exp += 2) {
@@ -1191,19 +1191,19 @@
             roundRect(ctx, bx, plotY + plotH - hBar, bw, hBar, 4, b.col, '#ffffff', 1);
           }
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(b.label, bx + bw / 2, plotY + plotH + 16);
 
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = '9.5px monospace';
+          ctx.font = '9.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           const valStr = b.val <= 1e-15 ? '0' : (b.val >= 10 ? b.val.toFixed(1) : formatSci(b.val, 1));
           ctx.fillText(valStr, bx + bw / 2, plotY + plotH + 32);
         }
 
         roundRect(ctx, chartCard.x + 12, chartCard.y + 394, chartCard.w - 24, 34, 6, '#0f172a', '#334155', 1);
         ctx.fillStyle = '#38bdf8';
-        ctx.font = 'bold 11.5px monospace';
+        ctx.font = 'bold 11.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'center';
         ctx.fillText(
           `pH = ${eq.pH.toFixed(2)}   |   pOH = ${(14 - eq.pH).toFixed(2)}   |   Kw = 1.0×10⁻¹⁴`,
@@ -1215,7 +1215,7 @@
         drawShadowCard(ctx, ctrlCard.x, ctrlCard.y, ctrlCard.w, ctrlCard.h, 10, '#1e293b', '#334155');
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13.5px system-ui, sans-serif';
+        ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText(s.mode === 'known' ? '1. 选择已知标准溶液' : '1. 自定义溶液参数调节', ctrlCard.x + 14, ctrlCard.y + 22);
 
@@ -1277,13 +1277,13 @@
           const alphaPct = eq.c > 0 ? clamp((eq.cIon / eq.c) * 100, 0, 100) : 0;
           roundRect(ctx, ctrlCard.x + 14, ctrlCard.y + 216, ctrlCard.w - 28, 28, 6, '#0f172a', '#475569', 1);
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 11.5px monospace';
+          ctx.font = 'bold 11.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.fillText(`电离度 α = ${alphaPct.toFixed(2)}%`, ctrlCard.x + ctrlCard.w / 2, ctrlCard.y + 230);
         }
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13.5px system-ui, sans-serif';
+        ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('2. 切换酸碱与导电测试工具', ctrlCard.x + 14, ctrlCard.y + 266);
 
@@ -1300,7 +1300,7 @@
         }
 
         roundRect(ctx, ctrlCard.x + 14, ctrlCard.y + 402, ctrlCard.w - 28, 26, 6, '#0f172a', '#334155', 1);
-        ctx.font = '10.5px system-ui, sans-serif';
+        ctx.font = '10.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillStyle = '#cbd5e1';
         ctx.fillText('提示：可直接在烧杯区上下拖拽探针/试纸浸入深度', ctrlCard.x + ctrlCard.w / 2, ctrlCard.y + 415);
@@ -1591,7 +1591,7 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('细胞磷脂双分子层跨膜运输 (Membrane Transport)', 28, 33);
@@ -1620,7 +1620,7 @@
         roundRect(ctx, viewX + 4, memBot, viewW - 8, viewY + viewH - memBot - 4, 8, 'rgba(180, 83, 9, 0.16)', null);
 
         ctx.fillStyle = '#7dd3fc';
-        ctx.font = 'bold 12.5px system-ui, sans-serif';
+        ctx.font = 'bold 12.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('细胞外液 (Extracellular Fluid) — 高 [Na⁺]、高 [O₂]', viewX + 14, viewY + 20);
 
@@ -1695,12 +1695,12 @@
               ctx.fillStyle = '#10b981';
               ctx.fill();
               ctx.fillStyle = '#a7f3d0';
-              ctx.font = 'bold 9px sans-serif';
+              ctx.font = 'bold 9px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
               ctx.textAlign = 'center';
               ctx.fillText('ACh', ch.x - 14, memTop - 22);
             }
             ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 10px system-ui, sans-serif';
+            ctx.font = 'bold 10px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(ch.label + (ch.open ? '(开)' : '(关)'), ch.x, memBot + 18);
           }
@@ -1738,13 +1738,13 @@
             ctx.fillStyle = '#eab308';
             ctx.fill();
             ctx.fillStyle = '#0f172a';
-            ctx.font = 'bold 9px sans-serif';
+            ctx.font = 'bold 9px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText('P', px + 28, memBot + 6);
           }
 
           ctx.fillStyle = '#6ee7b7';
-          ctx.font = 'bold 11px system-ui, sans-serif';
+          ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           const stageTxt =
             s.pumpStage === 0 ? 'E₁ 结合 3Na⁺ + ATP' :
@@ -1773,7 +1773,7 @@
           ctx.stroke();
 
           ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 8px system-ui, sans-serif';
+          ctx.font = 'bold 8px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(m.label, p.x, p.y);
@@ -1783,7 +1783,7 @@
         drawShadowCard(ctx, rightCard.x, rightCard.y, rightCard.w, rightCard.h, 10, '#1e293b', '#334155');
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13.5px system-ui, sans-serif';
+        ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('细胞内外溶质浓度实时对比', rightCard.x + 14, rightCard.y + 22);
 
@@ -1810,19 +1810,19 @@
           roundRect(ctx, gx + bw + 2, chartY + chartH - hIn, bw, hIn, 3, '#f59e0b', '#ffffff', 0.8);
 
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 10.5px system-ui, sans-serif';
+          ctx.font = 'bold 10.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(meta.label, gx + bw, chartY + chartH + 14);
 
           ctx.fillStyle = '#94a3b8';
-          ctx.font = '9.5px monospace';
+          ctx.font = '9.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.fillText(`${cEx}/${cIn}`, gx + bw, chartY + chartH + 27);
         }
 
         ctx.fillStyle = '#0ea5e9';
         ctx.fillRect(rightCard.x + 20, rightCard.y + 270, 12, 10);
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '11px system-ui, sans-serif';
+        ctx.font = '11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('细胞外液 (外)', rightCard.x + 36, rightCard.y + 276);
 
@@ -1832,7 +1832,7 @@
         ctx.fillText('细胞内液 (内)', rightCard.x + 148, rightCard.y + 276);
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13px system-ui, sans-serif';
+        ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('通道门控与能量调控', rightCard.x + 14, rightCard.y + 304);
 
         const chanOpts = [
@@ -2007,7 +2007,7 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('库仑定律静电相互作用仿真 (Coulomb\'s Law)', 28, 33);
@@ -2057,7 +2057,7 @@
         const distText = isMacro ? `r = ${rUnits.toFixed(2)} cm` : `r = ${(rUnits * 10).toFixed(1)} pm`;
         roundRect(ctx, (c1X + c2X) / 2 - 58, chargeY + 42, 116, 24, 6, '#1e293b', '#475569', 1);
         ctx.fillStyle = '#38bdf8';
-        ctx.font = 'bold 12px monospace';
+        ctx.font = 'bold 12px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'center';
         ctx.fillText(distText, (c1X + c2X) / 2, chargeY + 54);
 
@@ -2076,7 +2076,7 @@
                 ? `${formatSci(forceN, 2)} N`
                 : `${forceN.toFixed(2)} N`;
             ctx.fillStyle = '#fde047';
-            ctx.font = 'bold 12.5px monospace';
+            ctx.font = 'bold 12.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
             ctx.textAlign = 'center';
             ctx.fillText(`|F₁₂| = ${fStr}`, c1X + (dir1 * arrowLen) / 2, chargeY - 52);
             ctx.fillText(`|F₂₁| = ${fStr}`, c2X + (dir2 * arrowLen) / 2, chargeY - 52);
@@ -2100,13 +2100,13 @@
           ctx.stroke();
 
           ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 14px system-ui, sans-serif';
+          ctx.font = 'bold 14px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(q > 0 ? `+${q}` : `${q}`, cx, cy);
 
           ctx.fillStyle = '#cbd5e1';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText(label, cx, cy + r + 15);
         }
 
@@ -2126,12 +2126,12 @@
           ctx.stroke();
           if (isMajor) {
             const val = isMacro ? i / 5 : (i / 5) * 10;
-            ctx.font = 'bold 11px monospace';
+            ctx.font = 'bold 11px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
             ctx.textAlign = 'center';
             ctx.fillText(String(val), tx, rulerY + 26);
           }
         }
-        ctx.font = 'bold 11px sans-serif';
+        ctx.font = 'bold 11px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText(isMacro ? 'cm' : 'pm', rulerX + rulerW + 2, rulerY + 26);
 
         const botY = 384;
@@ -2162,16 +2162,16 @@
 
         drawShadowCard(ctx, 558, botY, 318, 142, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 13.5px system-ui, sans-serif';
+        ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('库仑定律定量计算与牛顿第三定律', 574, botY + 24);
 
         ctx.fillStyle = '#38bdf8';
-        ctx.font = 'bold 13px monospace';
+        ctx.font = 'bold 13px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillText('F = kₑ · |q₁ · q₂| / r²', 574, botY + 52);
 
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '11.5px monospace';
+        ctx.font = '11.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillText('kₑ = 8.988 × 10⁹ N·m²/C²', 574, botY + 76);
         ctx.fillText(
           `性质: ${zeroForce ? '无静电力 (F = 0)' : repulsive ? '同种电荷相互排斥 (← →)' : '异种电荷相互吸引 (→ ←)'}`,
@@ -2179,7 +2179,7 @@
           botY + 100
         );
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 12.5px monospace';
+        ctx.font = 'bold 12.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillText(`|F₁₂| = |F₂₁| = ${formatSci(forceN, 3)} N`, 574, botY + 124);
       }
     }
@@ -2435,7 +2435,7 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('气球与静电感应仿真 (Balloons and Static Electricity)', 28, 33);
@@ -2448,7 +2448,7 @@
           ctx.fillStyle = isPos ? '#ef4444' : '#3b82f6';
           ctx.fill();
           ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 10px monospace';
+          ctx.font = 'bold 10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
           ctx.fillText(isPos ? '+' : '−', cx, cy);
@@ -2459,7 +2459,7 @@
         roundRect(ctx, 28, 142, 46, 175, 14, '#7f1d1d', '#f87171', 1.5);
         roundRect(ctx, 226, 142, 44, 175, 14, '#7f1d1d', '#f87171', 1.5);
         ctx.fillStyle = '#fecaca';
-        ctx.font = 'bold 13px system-ui, sans-serif';
+        ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('羊毛衫 (Sweater)', 150, 405);
 
@@ -2476,7 +2476,7 @@
         if (s.wallPresent === 'yes') {
           roundRect(ctx, 716, 74, 158, 368, 6, '#334155', '#94a3b8', 2);
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = 'bold 13px system-ui, sans-serif';
+          ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('电中性墙壁 (感应极化)', 795, 86);
 
@@ -2824,7 +2824,7 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('一维离散珠串波动模拟器 (Wave on a String — 60 耦合振子)', 28, 33);
@@ -2883,7 +2883,7 @@
         } else {
           roundRect(ctx, startX - 52, y0 - 10, 48, 20, 5, '#64748b', '#e2e8f0', 1.5);
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 10px sans-serif';
+          ctx.font = 'bold 10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText(s.driveMode === 'manual' ? '上下拖动' : '脉冲源', startX - 28, y0);
         }
@@ -2901,7 +2901,7 @@
         } else {
           roundRect(ctx, endX - 6, baseY - 95, 58, 190, 6, 'rgba(56, 189, 248, 0.12)', '#38bdf8', 1.8);
           ctx.fillStyle = '#7dd3fc';
-          ctx.font = '10px sans-serif';
+          ctx.font = '10px "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('∞ 无反射窗', endX + 23, baseY - 104);
         }
@@ -2942,7 +2942,7 @@
             ctx.moveTo(tx, ry);
             ctx.lineTo(tx, ry + 10);
             ctx.stroke();
-            ctx.font = 'bold 10px monospace';
+            ctx.font = 'bold 10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
             ctx.textAlign = 'center';
             ctx.fillText(`${cm} cm`, tx, ry + 19);
           }
@@ -2959,7 +2959,7 @@
         drawShadowCard(ctx, 14, botY, W - 28, 142, 10, '#1e293b', '#334155');
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 12.5px system-ui, sans-serif';
+        ctx.font = 'bold 12.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('左端驱动方式', 28, botY + 20);
 
@@ -2976,7 +2976,7 @@
         }
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 12.5px system-ui, sans-serif';
+        ctx.font = 'bold 12.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('右端边界条件', 156, botY + 20);
 
@@ -3186,7 +3186,7 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('傅里叶：造波 (Fourier: Making Waves)', 28, 33);
@@ -3214,7 +3214,7 @@
 
         if (s.mode === 'discrete') {
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('(上) 谐波振幅谱 A₁ ~ A₁₁ (可直接上下拖动各阶滑块柱)', p1.x + 12, p1.y + 18);
 
@@ -3254,16 +3254,16 @@
             ctx.stroke();
 
             ctx.fillStyle = '#e2e8f0';
-            ctx.font = 'bold 10px monospace';
+            ctx.font = 'bold 10px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
             ctx.textAlign = 'center';
             ctx.fillText(`A${i + 1}`, cx + colW / 2, ampPlot.y + ampPlot.h + 6);
             ctx.fillStyle = col;
-            ctx.font = '9.5px monospace';
+            ctx.font = '9.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
             ctx.fillText(aVal.toFixed(2), cx + colW / 2, ampPlot.y - 4);
           }
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('(中) 各阶独立谐波分量 yₙ(x,t) = Aₙ sin(n·k₀x − n·ω₀t)', p2.x + 12, p2.y + 18);
 
@@ -3294,7 +3294,7 @@
           }
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('(下) 傅里叶级数合成总波形 Y(x,t) = Σ Aₙ sin(n·k₀x − n·ω₀t)', p3.x + 12, p3.y + 18);
 
@@ -3322,7 +3322,7 @@
           ctx.stroke();
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 13.5px system-ui, sans-serif';
+          ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('经典波形傅里叶级数预设', rightCard.x + 14, rightCard.y + 24);
 
@@ -3342,11 +3342,11 @@
 
           roundRect(ctx, rightCard.x + 14, rightCard.y + 242, rightCard.w - 28, 206, 8, '#0f172a', '#334155', 1);
           ctx.fillStyle = '#fde047';
-          ctx.font = 'bold 11.5px system-ui, sans-serif';
+          ctx.font = 'bold 11.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('当前非零谐波系数:', rightCard.x + 24, rightCard.y + 262);
 
-          ctx.font = '11px monospace';
+          ctx.font = '11px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           let lineIdx = 0;
           for (let i = 0; i < 11; i++) {
             if (Math.abs(s.amplitudes[i]) > 0.005 && lineIdx < 9) {
@@ -3366,7 +3366,7 @@
           const xSpan = p1.w - 56;
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`(上) 连续波数谱分布 A(k) = exp(−(k − k₀)² / 4Δk²)   [Δk = ${dk.toFixed(2)} rad/m]`, p1.x + 12, p1.y + 18);
 
@@ -3387,7 +3387,7 @@
           ctx.stroke();
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('(中) 连续波包内各波数分量余弦波簇 A(k)·cos(k·x)', p2.x + 12, p2.y + 18);
 
@@ -3412,7 +3412,7 @@
           ctx.globalAlpha = 1.0;
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 12px system-ui, sans-serif';
+          ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText(`(下) 空间局部化波包 ψ(x) 及高斯包络线   [空间宽度 Δx = ${dx.toFixed(3)} m]`, p3.x + 12, p3.y + 18);
 
@@ -3447,7 +3447,7 @@
           ctx.stroke();
 
           ctx.fillStyle = '#f8fafc';
-          ctx.font = 'bold 13.5px system-ui, sans-serif';
+          ctx.font = 'bold 13.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'left';
           ctx.fillText('波包与不确定性关系调节', rightCard.x + 14, rightCard.y + 24);
 
@@ -3464,24 +3464,24 @@
 
           roundRect(ctx, rightCard.x + 14, rightCard.y + 236, rightCard.w - 28, 210, 8, '#0f172a', '#38bdf8', 1.4);
           ctx.fillStyle = '#38bdf8';
-          ctx.font = 'bold 13px system-ui, sans-serif';
+          ctx.font = 'bold 13px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.textAlign = 'center';
           ctx.fillText('傅里叶共轭不确定性定理', rightCard.x + rightCard.w / 2, rightCard.y + 260);
 
           ctx.fillStyle = '#fde047';
-          ctx.font = 'bold 15px monospace';
+          ctx.font = 'bold 15px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.fillText('Δx · Δk ≥ 1/2', rightCard.x + rightCard.w / 2, rightCard.y + 292);
 
           ctx.fillStyle = '#e2e8f0';
-          ctx.font = '12px monospace';
+          ctx.font = '12px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.fillText(`Δk = ${dk.toFixed(2)} rad/m`, rightCard.x + rightCard.w / 2, rightCard.y + 326);
           ctx.fillText(`Δx = ${dx.toFixed(3)} m`, rightCard.x + rightCard.w / 2, rightCard.y + 350);
           ctx.fillStyle = '#34d399';
-          ctx.font = 'bold 13px monospace';
+          ctx.font = 'bold 13px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.fillText(`Δx · Δk = ${(dx * dk).toFixed(3)} = 0.500`, rightCard.x + rightCard.w / 2, rightCard.y + 380);
 
           ctx.fillStyle = '#94a3b8';
-          ctx.font = '11px system-ui, sans-serif';
+          ctx.font = '11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
           ctx.fillText('波数谱 Δk 越宽，空间波包 Δx 越窄', rightCard.x + rightCard.w / 2, rightCard.y + 414);
         }
       }
@@ -3638,7 +3638,7 @@
 
         drawShadowCard(ctx, 14, 10, W - 28, 46, 10, '#1e293b', '#334155');
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 16px system-ui, sans-serif';
+        ctx.font = 'bold 16px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText('黑体辐射光谱与色温定律 (Blackbody Spectrum)', 28, 33);
@@ -3681,7 +3681,7 @@
         ctx.globalAlpha = 1.0;
 
         ctx.fillStyle = '#a855f7';
-        ctx.font = 'bold 11px system-ui, sans-serif';
+        ctx.font = 'bold 11px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('紫外 UV', (plotX + visStart) / 2, plotY - 22);
         ctx.fillStyle = '#fde047';
@@ -3689,7 +3689,7 @@
         ctx.fillStyle = '#f87171';
         ctx.fillText('红外区 Infrared (IR) →', (visEnd + plotX + plotW) / 2, plotY - 22);
 
-        ctx.font = '10.5px monospace';
+        ctx.font = '10.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         for (let l = 0; l <= 3.0; l += 0.5) {
           const gx = plotX + (l / 3.0) * plotW;
           ctx.strokeStyle = 'rgba(148, 163, 184, 0.14)';
@@ -3704,14 +3704,14 @@
           ctx.fillText(`${l.toFixed(1)}`, gx, plotY + plotH + 16);
         }
         ctx.fillStyle = '#94a3b8';
-        ctx.font = 'bold 11.5px system-ui, sans-serif';
+        ctx.font = 'bold 11.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('波长 λ (μm)   [点击或拖动光谱区移动读数探针]', plotX + plotW / 2, plotY + plotH + 36);
 
         ctx.save();
         ctx.translate(cardX + 18, plotY + plotH / 2);
         ctx.rotate(-Math.PI / 2);
         ctx.fillStyle = '#94a3b8';
-        ctx.font = 'bold 11.5px system-ui, sans-serif';
+        ctx.font = 'bold 11.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`光谱辐射出射度 B(λ,T) [峰值缩放: ${formatSci(yMax, 1)} MW/(m²·μm)]`, 0, 0);
         ctx.restore();
@@ -3778,7 +3778,7 @@
           ctx.fill();
 
           ctx.fillStyle = '#38bdf8';
-          ctx.font = 'bold 11px monospace';
+          ctx.font = 'bold 11px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
           ctx.textAlign = peakX > plotX + plotW - 120 ? 'right' : 'left';
           ctx.fillText(
             `λ_max = ${lambdaMaxUm.toFixed(3)} μm (${Math.round(lambdaMaxUm * 1000)} nm)`,
@@ -3804,7 +3804,7 @@
 
         roundRect(ctx, plotX + plotW - 210, plotY + 10, 200, 38, 6, 'rgba(15, 23, 42, 0.88)', '#fde047', 1);
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 10.5px monospace';
+        ctx.font = 'bold 10.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'left';
         ctx.fillText(`探针波长 λ = ${s.probeLambda.toFixed(2)} μm`, plotX + plotW - 200, plotY + 23);
         ctx.fillText(`B(λ,T) = ${formatSci(probeB, 2)} MW/m²·μm`, plotX + plotW - 200, plotY + 38);
@@ -3834,24 +3834,24 @@
           ctx.stroke();
         }
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = 'bold 10.5px system-ui, sans-serif';
+        ctx.font = 'bold 10.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(`合成色温 (${T} K)`, starCX, rCard.y + 110);
 
         roundRect(ctx, rCard.x + 136, rCard.y + 14, 122, 108, 8, '#0f172a', '#334155', 1.2);
         ctx.fillStyle = '#38bdf8';
-        ctx.font = 'bold 10.5px system-ui, sans-serif';
+        ctx.font = 'bold 10.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('维恩峰值波长 λ_max:', rCard.x + 144, rCard.y + 32);
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 12px monospace';
+        ctx.font = 'bold 12px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillText(`${lambdaMaxUm.toFixed(3)} μm`, rCard.x + 144, rCard.y + 50);
 
         ctx.fillStyle = '#f59e0b';
-        ctx.font = 'bold 10.5px system-ui, sans-serif';
+        ctx.font = 'bold 10.5px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.fillText('总辐射出射度 M=σT⁴:', rCard.x + 144, rCard.y + 78);
         ctx.fillStyle = '#fde047';
-        ctx.font = 'bold 11.5px monospace';
+        ctx.font = 'bold 11.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.fillText(`${formatSci(stefanM, 2)} W/m²`, rCard.x + 144, rCard.y + 98);
 
         const tSlider = { x: rCard.x + 16, y: rCard.y + 154, w: rCard.w - 32, h: 22 };
@@ -3874,7 +3874,7 @@
         ctx.stroke();
 
         ctx.fillStyle = '#f8fafc';
-        ctx.font = 'bold 12px system-ui, sans-serif';
+        ctx.font = 'bold 12px system-ui, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif';
         ctx.textAlign = 'left';
         ctx.fillText('典型天体与光源色温标记:', rCard.x + 64, rCard.y + 202);
 
@@ -3893,7 +3893,7 @@
 
         roundRect(ctx, rCard.x + 64, rCard.y + 392, rCard.w - 78, 56, 6, '#0f172a', '#334155', 1);
         ctx.fillStyle = '#cbd5e1';
-        ctx.font = '10.5px monospace';
+        ctx.font = '10.5px "Noto Sans Mono CJK SC", "Microsoft YaHei", monospace';
         ctx.textAlign = 'left';
         ctx.fillText('维恩定律: λ_max = 2898 / T (μm)', rCard.x + 72, rCard.y + 410);
         ctx.fillText('玻尔兹曼: M = σ·T⁴ (W/m²)', rCard.x + 72, rCard.y + 432);
